@@ -1,5 +1,7 @@
 package com.zubrycky.lesson1;
 
+import static com.zubrycky.utils.Utils.print;
+
 public class Lesson1 implements Runnable {
 
     @Override
@@ -20,7 +22,5 @@ public class Lesson1 implements Runnable {
         print("s4.equals(s2): " + s4.equals(s2));
     }
 
-    private void print(Object message) {
-        System.out.println(message);
-    }
+
 }
