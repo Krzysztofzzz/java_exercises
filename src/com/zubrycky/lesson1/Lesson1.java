@@ -17,7 +17,7 @@ public class Lesson1 implements Runnable {
 
         // zapamiętać: stringi zawsze porównujemy metodą equals
         print("s1.equals(s2): " + s1.equals(s2));
-        print("s3.equals(s2): " + s3.equals(s2));
+        print("s4.equals(s2): " + s4.equals(s2));
     }
 
     private void print(Object message) {
