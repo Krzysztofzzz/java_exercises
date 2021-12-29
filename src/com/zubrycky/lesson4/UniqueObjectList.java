@@ -5,16 +5,21 @@ import com.zubrycky.lesson3.Person;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.zubrycky.utils.Utils.print;
+
 public class UniqueObjectList {
     private List<Person> uniqueObjectsList = new ArrayList<>();
 
     public void add(Person person) {
         for (int i = 0; i < uniqueObjectsList.size(); i++) {
             Person p = uniqueObjectsList.get(i);
-            if (p.equals(person))
+            if (p.equals(person)) {
+                print("Ta osoba już istnieje: " + person);
                 return;
+            }
         }
         uniqueObjectsList.add(person);
+        print("Dodano: " + person);
     }
 
     public void remove(Person person) {
