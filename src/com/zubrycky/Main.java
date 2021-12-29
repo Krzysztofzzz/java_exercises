@@ -1,12 +1,10 @@
 package com.zubrycky;
 
-import com.zubrycky.lesson1.Lesson1;
-import com.zubrycky.lesson2.Lesson2;
-import com.zubrycky.lesson3.Lesson3;
+import com.zubrycky.lesson4.Lesson4;
 
 public class Main {
 
     public static void main(String[] args) {
-        new Lesson3().run();
+        new Lesson4().run();
     }
 }
