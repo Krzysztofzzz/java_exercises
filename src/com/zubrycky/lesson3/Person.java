@@ -1,5 +1,7 @@
 package com.zubrycky.lesson3;
 
+import java.util.Objects;
+
 public class Person {
     private String name;
     private int yearOfBirth;
@@ -27,5 +29,10 @@ public class Person {
     @Override
     public String toString() {
         return name + " " + yearOfBirth;
+    }
+    
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, yearOfBirth);
     }
 }
