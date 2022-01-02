@@ -9,6 +9,7 @@ import java.util.Random;
 import static com.zubrycky.utils.Utils.print;
 
 public class Lesson6 implements Runnable {
+
     @Override
     public void run() {
         List<CreditCard> creditCards = new ArrayList<>();
