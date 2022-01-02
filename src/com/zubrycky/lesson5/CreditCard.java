@@ -4,11 +4,9 @@ import java.util.Objects;
 
 public class CreditCard {
     private Long number;
-    private CardStatus status;
 
-    public CreditCard(Long number, CardStatus status) {
+    public CreditCard(Long number) {
         this.number = number;
-        this.status = status;
     }
 
     public Long getNumber() {
@@ -19,32 +17,23 @@ public class CreditCard {
         this.number = number;
     }
 
-    public CardStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(CardStatus status) {
-        this.status = status;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CreditCard that = (CreditCard) o;
-        return Objects.equals(number, that.number) && status == that.status;
+        return Objects.equals(number, that.number);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(number, status);
+        return Objects.hash(number);
     }
 
     @Override
     public String toString() {
         return "CreditCard{" +
                 "number=" + number +
-                ", status=" + status +
                 '}';
     }
 }
