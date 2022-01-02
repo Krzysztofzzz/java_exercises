@@ -14,6 +14,11 @@ public class Lesson6 implements Runnable {
         List<CreditCard> creditCards = new ArrayList<>();
         addNewCard(creditCards);
         printCreditCards(creditCards);
+        clearCreditCards(creditCards);
+        printCreditCards(creditCards);
+        Integer i = 100;
+        increase(i);
+        print(i);
     }
 
     private void addNewCard(List<CreditCard> creditCardList) {
@@ -26,5 +31,15 @@ public class Lesson6 implements Runnable {
         for (CreditCard card : creditCardList) {
             print(card);
         }
+    }
+
+    private void clearCreditCards(List<CreditCard> creditCardList) {
+        for (CreditCard card : creditCardList) {
+            card.setNumber(0L);
+        }
+    }
+
+    private void increase(Integer value){
+        value = value + 100;
     }
 }
