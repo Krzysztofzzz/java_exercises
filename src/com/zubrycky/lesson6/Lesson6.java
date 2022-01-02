@@ -12,12 +12,16 @@ public class Lesson6 implements Runnable {
     @Override
     public void run() {
         List<CreditCard> creditCards = new ArrayList<>();
+        // obiekty zawsze są przekazywane przez referencje
         addNewCard(creditCards);
+        // dlatego każda operacja jaką zrobimy na liście creditCards będzie widoczna tutaj
         printCreditCards(creditCards);
         clearCreditCards(creditCards);
         printCreditCards(creditCards);
+
         Integer i = 100;
         increase(i);
+        // jako, że metoda increase nie zwraca żadnego obiektu to wartość i się nie zmienia
         print(i);
     }
 
@@ -39,7 +43,8 @@ public class Lesson6 implements Runnable {
         }
     }
 
-    private void increase(Integer value){
+    private void increase(Integer value) {
+        // value + 100 tak naprawdę tworzy nowy obiekt, który jest na nowo przypisany do zmiennej value
         value = value + 100;
     }
 }
