@@ -8,6 +8,7 @@ public class Task {
     private String id;
     private String name;
     private List<SubTask> subTasks = new ArrayList<>();
+    private String test = "krzycho";
 
     public Task(String id, String name) {
         this.id = id;
@@ -25,6 +26,9 @@ public class Task {
     public void addSubtask(String name){
         subTasks.add(new SubTask(UUID.randomUUID().toString(), name));
     }
+    public void addSubtask(SubTask subTask){
+        subTasks.add(subTask);
+    }
 
     @Override
     public String toString() {
@@ -35,7 +39,7 @@ public class Task {
                 '}';
     }
 
-    private class SubTask{
+    public class SubTask{
         private String id;
         private String name;
 
@@ -57,6 +61,7 @@ public class Task {
             return "SubTask{" +
                     "id='" + id + '\'' +
                     ", name='" + name + '\'' +
+                    ", taskName='" + Task.this.name + '\'' +
                     '}';
         }
     }
