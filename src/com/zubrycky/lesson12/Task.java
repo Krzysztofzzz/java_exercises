@@ -42,6 +42,7 @@ public class Task {
     public class SubTask{
         private String id;
         private String name;
+        private List<SubSubTask> subSubTaskList = new ArrayList<>();
 
         public SubTask(String id, String name) {
             this.id = id;
@@ -56,13 +57,37 @@ public class Task {
             return name;
         }
 
+        public void addSubSubTask(SubSubTask subSubTask){
+            subSubTaskList.add(subSubTask);
+        }
+
         @Override
         public String toString() {
             return "SubTask{" +
                     "id='" + id + '\'' +
                     ", name='" + name + '\'' +
                     ", taskName='" + Task.this.name + '\'' +
+                    ", subSubTasks=" + subSubTaskList +
                     '}';
+        }
+
+        static class SubSubTask{
+            private String name;
+
+            public SubSubTask(String name) {
+                this.name = name;
+            }
+
+            public String getName() {
+                return name;
+            }
+
+            @Override
+            public String toString() {
+                return "SubSubTask{" +
+                        "name='" + name + '\'' +
+                        '}';
+            }
         }
     }
 }

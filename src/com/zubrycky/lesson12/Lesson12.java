@@ -20,6 +20,9 @@ public class Lesson12 implements Runnable{
         Task.SubTask subTask1 = zadanie3.new SubTask(UUID.randomUUID().toString(),"podzadanie3");
         zadanie3.addSubtask(subTask1);
 
+        Task.SubTask.SubSubTask subSubTask1 = new Task.SubTask.SubSubTask("podzadaniepodzdania");
+        subTask1.addSubSubTask(subSubTask1);
+
         tasks.add(zadanie3);
 
         print(tasks);
