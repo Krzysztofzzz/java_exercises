@@ -1,6 +1,6 @@
 package com.zubrycky.lesson13;
 
-public abstract class Shape {
+public abstract class Shape implements Resizable{
 
     private int numberOfSides;
 

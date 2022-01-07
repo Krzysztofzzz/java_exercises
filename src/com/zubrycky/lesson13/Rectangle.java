@@ -1,6 +1,6 @@
 package com.zubrycky.lesson13;
 
-public class Rectangle extends Shape{
+public class Rectangle extends Shape {
 
     private static final int NUMBER_OF_SIDES = 4;
 
@@ -31,12 +31,12 @@ public class Rectangle extends Shape{
 
     @Override
     public double getArea() {
-        return height*width;
+        return height * width;
     }
 
     @Override
     public double getPerimeter() {
-        return 2*(width + height);
+        return 2 * (width + height);
     }
 
     @Override
@@ -45,5 +45,11 @@ public class Rectangle extends Shape{
                 "width=" + width +
                 ", height=" + height +
                 "} " + super.toString();
+    }
+
+    @Override
+    public void resize(double x) {
+        width *= x;
+        height *= x;
     }
 }

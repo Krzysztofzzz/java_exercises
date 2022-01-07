@@ -35,4 +35,9 @@ public class Circle extends Shape {
                 "radius=" + radius +
                 "} " + super.toString();
     }
+
+    @Override
+    public void resize(double x) {
+        radius *= x;
+    }
 }

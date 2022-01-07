@@ -1,6 +1,6 @@
 package com.zubrycky.lesson13;
 
-public class Triangle extends Shape{
+public class Triangle extends Shape {
 
     private static final int NUMBER_OF_SIDES = 3;
 
@@ -31,7 +31,7 @@ public class Triangle extends Shape{
 
     @Override
     public double getArea() {
-        return base*height/2;
+        return base * height / 2;
     }
 
     @Override
@@ -45,5 +45,11 @@ public class Triangle extends Shape{
                 "base=" + base +
                 ", height=" + height +
                 "} " + super.toString();
+    }
+
+    @Override
+    public void resize(double x) {
+        base *= x;
+        height *= x;
     }
 }

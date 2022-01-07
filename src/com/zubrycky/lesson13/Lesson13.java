@@ -19,8 +19,10 @@ public class Lesson13 implements Runnable {
         shapeList.add(circle);
 
         printShapes(shapeList);
-
-
+        resize(shapeList,0.5);
+        printShapes(shapeList);
+        resize(shapeList,2);
+        printShapes(shapeList);
     }
 
     private void printShapes(List<Shape> shapeList) {
@@ -33,6 +35,11 @@ public class Lesson13 implements Runnable {
                 print(e.getMessage());
             }
 
+        }
+    }
+    private void resize(List<? extends Resizable> resizableList, double factor){
+        for (Resizable r : resizableList) {
+            r.resize(factor);
         }
     }
 }
