@@ -35,8 +35,8 @@ public class Triangle extends Shape{
     }
 
     @Override
-    public double getPerimeter() throws UnsupportedOperationException {
-        throw new UnsupportedOperationException();
+    public double getPerimeter() throws PerimeterNotSupportedException {
+        throw new PerimeterNotSupportedException();
     }
 
     @Override

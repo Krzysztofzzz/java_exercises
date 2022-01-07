@@ -29,8 +29,8 @@ public class Lesson13 implements Runnable {
             print(s.getArea());
             try{
                 print(s.getPerimeter());
-            }catch (UnsupportedOperationException e){
-                print("getPerimeter is not supported");
+            }catch (PerimeterNotSupportedException e){
+                print(e.getMessage());
             }
 
         }
