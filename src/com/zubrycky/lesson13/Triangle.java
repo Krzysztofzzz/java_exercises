@@ -35,6 +35,11 @@ public class Triangle extends Shape{
     }
 
     @Override
+    public double getPerimeter() throws UnsupportedOperationException {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
     public String toString() {
         return "Triangle{" +
                 "base=" + base +

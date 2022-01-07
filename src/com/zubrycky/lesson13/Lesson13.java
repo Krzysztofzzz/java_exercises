@@ -11,10 +11,12 @@ public class Lesson13 implements Runnable {
     public void run() {
         Rectangle rectangle = new Rectangle(20.0, 30.0);
         Triangle triangle = new Triangle(10, 15);
+        Circle circle = new Circle(25);
 
         List<Shape> shapeList = new ArrayList<>();
         shapeList.add(rectangle);
         shapeList.add(triangle);
+        shapeList.add(circle);
 
         printShapes(shapeList);
 
@@ -25,6 +27,12 @@ public class Lesson13 implements Runnable {
         for (Shape s : shapeList) {
             print(s);
             print(s.getArea());
+            try{
+                print(s.getPerimeter());
+            }catch (UnsupportedOperationException e){
+                print("getPerimeter is not supported");
+            }
+
         }
     }
 }

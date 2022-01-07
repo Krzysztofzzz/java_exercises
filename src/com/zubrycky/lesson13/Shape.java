@@ -9,6 +9,7 @@ public abstract class Shape {
     }
 
     public abstract double getArea();
+    public abstract double getPerimeter() throws UnsupportedOperationException;
 
     public int getNumberOfSides() {
         return numberOfSides;
