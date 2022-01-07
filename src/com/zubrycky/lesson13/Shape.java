@@ -8,6 +8,8 @@ public abstract class Shape {
         this.numberOfSides = numberOfSides;
     }
 
+    public abstract double getArea();
+
     public int getNumberOfSides() {
         return numberOfSides;
     }

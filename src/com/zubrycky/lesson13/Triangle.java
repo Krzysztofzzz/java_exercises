@@ -30,6 +30,11 @@ public class Triangle extends Shape{
     }
 
     @Override
+    public double getArea() {
+        return base*height/2;
+    }
+
+    @Override
     public String toString() {
         return "Triangle{" +
                 "base=" + base +
