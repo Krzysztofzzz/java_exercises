@@ -10,7 +10,7 @@ import java.util.*;
 
 import static com.zubrycky.utils.Utils.print;
 
-public class Lesson14 implements Runnable {
+public class Lesson14Comparator implements Runnable {
     @Override
     public void run() {
         testPersonComparator();
