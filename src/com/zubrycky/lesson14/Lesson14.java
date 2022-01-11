@@ -31,9 +31,11 @@ public class Lesson14 implements Runnable {
 //        Collections.sort(personList, personComparator);
 
 
-        PersonNameComparator personNameComparator = new PersonNameComparator();
-        PersonYearOfBirthComparator personYearOfBirthComparator = new PersonYearOfBirthComparator();
-        Collections.sort(personList,personYearOfBirthComparator.thenComparing(personNameComparator));
+//        PersonNameComparator personNameComparator = new PersonNameComparator();
+//        PersonYearOfBirthComparator personYearOfBirthComparator = new PersonYearOfBirthComparator();
+//        Collections.sort(personList,personYearOfBirthComparator.thenComparing(personNameComparator));
+
+        Collections.sort(personList);
 
 
 

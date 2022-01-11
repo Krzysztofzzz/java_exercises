@@ -2,7 +2,7 @@ package com.zubrycky.lesson3;
 
 import java.util.Objects;
 
-public class Person {
+public class Person implements Comparable<Person>{
     private String name;
     private int yearOfBirth;
 
@@ -42,5 +42,16 @@ public class Person {
 
     public int getYearOfBirth() {
         return yearOfBirth;
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        if (this.yearOfBirth<o.yearOfBirth){
+            return -1;
+        }else if (this.yearOfBirth>o.yearOfBirth){
+            return 1;
+        }else {
+            return this.name.compareTo(o.name);
+        }
     }
 }
