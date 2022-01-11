@@ -25,6 +25,8 @@ public class Lesson14 implements Runnable {
         Person person6 = new Person("Michał", 2004);
         List<Person> personList = Arrays.asList(person1, person2, person3, person4, person5, person6);
 
+
+
         print(personList);
 
 //        PersonComparator personComparator = new PersonComparator();
