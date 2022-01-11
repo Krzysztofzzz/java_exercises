@@ -4,7 +4,7 @@ import com.zubrycky.excercise1.Animal;
 
 import java.util.Comparator;
 
-class AnimalComparator implements Comparator<Animal> {
+public class AnimalComparator implements Comparator<Animal> {
 
     @Override
     public int compare(Animal animal1, Animal animal2) {

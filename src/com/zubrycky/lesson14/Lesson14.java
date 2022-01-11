@@ -10,25 +10,32 @@ import java.util.*;
 
 import static com.zubrycky.utils.Utils.print;
 
-public class Lesson14 implements Runnable{
+public class Lesson14 implements Runnable {
     @Override
     public void run() {
         testPersonComparator();
     }
 
-    private void testPersonComparator(){
+    private void testPersonComparator() {
         Person person1 = new Person("Krzys", 1994);
         Person person2 = new Person("Miś", 2004);
         Person person3 = new Person("Zdziś", 1994);
         Person person4 = new Person("Burak", 2004);
         Person person5 = new Person("Wojtek", 1994);
         Person person6 = new Person("Michał", 2004);
-        List<Person> personList = Arrays.asList(person1,person2,person3,person4,person5,person6);
+        List<Person> personList = Arrays.asList(person1, person2, person3, person4, person5, person6);
 
         print(personList);
 
-        PersonComparator personComparator = new PersonComparator();
-        Collections.sort(personList,personComparator);
+//        PersonComparator personComparator = new PersonComparator();
+//        Collections.sort(personList, personComparator);
+
+
+        PersonNameComparator personNameComparator = new PersonNameComparator();
+        PersonYearOfBirthComparator personYearOfBirthComparator = new PersonYearOfBirthComparator();
+        Collections.sort(personList,personYearOfBirthComparator.thenComparing(personNameComparator));
+
+
 
         print(personList);
     }
