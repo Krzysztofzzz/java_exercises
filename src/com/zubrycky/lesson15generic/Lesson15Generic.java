@@ -1,5 +1,7 @@
 package com.zubrycky.lesson15generic;
 
+import com.zubrycky.excercise1.Animal;
+import com.zubrycky.excercise1.Cat;
 import com.zubrycky.lesson3.Person;
 
 import static com.zubrycky.utils.Utils.print;
@@ -46,6 +48,14 @@ public class Lesson15Generic implements Runnable{
         } catch (StackIsEmptyException e) {
             e.printStackTrace();
         }
+
+        Para<Person, Animal> para = new Para<>(
+                person1,
+                new Cat()
+        );
+        para.getTyp1();
+        
+
 
 
     }
