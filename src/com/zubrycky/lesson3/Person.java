@@ -35,4 +35,12 @@ public class Person {
     public int hashCode() {
         return Objects.hash(name, yearOfBirth);
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getYearOfBirth() {
+        return yearOfBirth;
+    }
 }

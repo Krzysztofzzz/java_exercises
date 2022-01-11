@@ -4,17 +4,36 @@ import com.zubrycky.excercise1.Animal;
 import com.zubrycky.excercise1.Cat;
 import com.zubrycky.excercise1.Fish;
 import com.zubrycky.excercise1.Spider;
+import com.zubrycky.lesson3.Person;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 import static com.zubrycky.utils.Utils.print;
 
 public class Lesson14 implements Runnable{
     @Override
     public void run() {
+        testPersonComparator();
+    }
+
+    private void testPersonComparator(){
+        Person person1 = new Person("Krzys", 1994);
+        Person person2 = new Person("Miś", 2004);
+        Person person3 = new Person("Zdziś", 1994);
+        Person person4 = new Person("Burak", 2004);
+        Person person5 = new Person("Wojtek", 1994);
+        Person person6 = new Person("Michał", 2004);
+        List<Person> personList = Arrays.asList(person1,person2,person3,person4,person5,person6);
+
+        print(personList);
+
+        PersonComparator personComparator = new PersonComparator();
+        Collections.sort(personList,personComparator);
+
+        print(personList);
+    }
+
+    private void testAnimalComparator() {
         Fish fish = new Fish("Nemo");
         Cat cat = new Cat("Fluffy");
         Animal animal1 = new Fish();
@@ -35,18 +54,6 @@ public class Lesson14 implements Runnable{
 
         print(animalList);
     }
-    private class AnimalComparator implements Comparator<Animal>{
 
-        @Override
-        public int compare(Animal animal1, Animal animal2) {
-            if (animal1.getNumberOfLegs()<animal2.getNumberOfLegs()){
-                return -1;
-            }else if (animal1.getNumberOfLegs()>animal2.getNumberOfLegs()){
-                return 1;
-            }else {
-                return 0;
-            }
-        }
-    }
 }
 
