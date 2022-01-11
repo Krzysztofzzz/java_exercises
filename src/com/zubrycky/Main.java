@@ -1,10 +1,10 @@
 package com.zubrycky;
 
-import com.zubrycky.lesson14.Lesson14Comparator;
+import com.zubrycky.lesson15generic.Lesson15Generic;
 
 public class Main {
 
     public static void main(String[] args) {
-        new Lesson14Comparator().run();
+        new Lesson15Generic().run();
     }
 }
