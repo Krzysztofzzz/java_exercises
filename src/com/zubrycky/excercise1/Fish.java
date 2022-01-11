@@ -7,12 +7,12 @@ public class Fish extends Animal implements Pet {
 
     private String name;
 
-    protected Fish(String name) {
+    public Fish(String name) {
         super(NUMBER_OF_LEGS);
         this.name = name;
     }
 
-    protected Fish(){
+    public Fish(){
         this("");
     }
 

@@ -14,6 +14,9 @@ public abstract class Animal {
     public void walk() {
         print("Animal moved its " + numberOfLegs + " legs.");
     }
+    public int getNumberOfLegs(){
+        return numberOfLegs;
+    }
 
 
 }
