@@ -4,6 +4,7 @@ import com.zubrycky.excercise.excercise1.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.OptionalDouble;
 
 import static com.zubrycky.utils.Utils.print;
@@ -29,6 +30,21 @@ public class Lesson16Stream implements Runnable {
 
 
         print(getPetsNames(animals));
+
+        List<String> petNamesStreamList = animals
+                .stream()
+                .map(animal -> {
+                    if (animal instanceof Pet) {
+                        return (Pet) animal;
+                    } else {
+                        return null;
+                    }
+                })
+                .filter(Objects::nonNull)
+                .map(Pet::getName)
+                .toList();
+        print(petNamesStreamList);
+
     }
 
     private double calculateAverageLegsCount(List<Animal> animals) {
