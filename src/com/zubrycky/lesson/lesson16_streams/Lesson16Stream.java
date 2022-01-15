@@ -6,6 +6,7 @@ import com.zubrycky.excercise.excercise1.Fish;
 import com.zubrycky.excercise.excercise1.Spider;
 
 import java.util.List;
+import java.util.OptionalDouble;
 
 import static com.zubrycky.utils.Utils.print;
 
@@ -21,6 +22,13 @@ public class Lesson16Stream implements Runnable {
         );
         double averageNumberOfLegs = calculateAverageLegsCount(animals);
         print(averageNumberOfLegs);
+
+        OptionalDouble average = animals
+                .stream()
+                .mapToInt(Animal::getNumberOfLegs)
+                .average();
+        print(average);
+
     }
 
     private double calculateAverageLegsCount(List<Animal> animals) {
