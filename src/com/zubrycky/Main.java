@@ -1,6 +1,6 @@
 package com.zubrycky;
 
-import com.zubrycky.lesson15generic.Lesson15Generic;
+import com.zubrycky.lesson.lesson15_generic.Lesson15Generic;
 
 public class Main {
 
