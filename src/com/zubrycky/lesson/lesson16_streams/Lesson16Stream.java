@@ -1,10 +1,8 @@
 package com.zubrycky.lesson.lesson16_streams;
 
-import com.zubrycky.excercise.excercise1.Animal;
-import com.zubrycky.excercise.excercise1.Cat;
-import com.zubrycky.excercise.excercise1.Fish;
-import com.zubrycky.excercise.excercise1.Spider;
+import com.zubrycky.excercise.excercise1.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.OptionalDouble;
 
@@ -29,6 +27,8 @@ public class Lesson16Stream implements Runnable {
                 .average();
         print(average);
 
+
+        print(getPetsNames(animals));
     }
 
     private double calculateAverageLegsCount(List<Animal> animals) {
@@ -40,6 +40,12 @@ public class Lesson16Stream implements Runnable {
     }
 
     private List<String> getPetsNames(List<Animal> animals) {
-        throw new UnsupportedOperationException("not implemented");
+        List<String> names = new ArrayList<>();
+        for (Animal a : animals) {
+            if (a instanceof Pet) {
+                names.add(((Pet) a).getName());
+            }
+        }
+        return names;
     }
 }
