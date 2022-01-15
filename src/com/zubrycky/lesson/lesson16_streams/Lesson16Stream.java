@@ -7,6 +7,8 @@ import com.zubrycky.excercise.excercise1.Spider;
 
 import java.util.List;
 
+import static com.zubrycky.utils.Utils.print;
+
 public class Lesson16Stream implements Runnable {
 
     @Override
@@ -14,12 +16,19 @@ public class Lesson16Stream implements Runnable {
         final List<Animal> animals = List.of(
                 new Fish("nemo"),
                 new Cat("freja"),
+                new Spider(),
                 new Spider()
         );
+        double averageNumberOfLegs = calculateAverageLegsCount(animals);
+        print(averageNumberOfLegs);
     }
 
     private double calculateAverageLegsCount(List<Animal> animals) {
-        throw new UnsupportedOperationException("not implemented");
+        double legs = 0;
+        for (Animal a : animals) {
+            legs += a.getNumberOfLegs();
+        }
+        return legs / animals.size();
     }
 
     private List<String> getPetsNames(List<Animal> animals) {
