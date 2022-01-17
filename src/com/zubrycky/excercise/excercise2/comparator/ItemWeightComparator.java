@@ -1,4 +1,6 @@
-package com.zubrycky.excercise.excercise2;
+package com.zubrycky.excercise.excercise2.comparator;
+
+import com.zubrycky.excercise.excercise2.items.Item;
 
 public class ItemWeightComparator implements ItemComparator {
 

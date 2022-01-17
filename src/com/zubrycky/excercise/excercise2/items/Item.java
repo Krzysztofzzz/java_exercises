@@ -1,6 +1,6 @@
-package com.zubrycky.excercise.excercise2;
+package com.zubrycky.excercise.excercise2.items;
 
-public abstract class Item implements Comparable {
+public abstract class Item implements Comparable<Item> {
 
     private static int numberOfItems;
     private static int id = 0;
@@ -15,6 +15,7 @@ public abstract class Item implements Comparable {
         this.weight = weight;
     }
 
+    @Override
     public int compareTo(Item other) {
         if (this.value > other.value) {
             return 1;
@@ -23,9 +24,11 @@ public abstract class Item implements Comparable {
         } else {
             return this.name.compareTo(other.name);
         }
+
     }
 
-    public void use() {}
+    public void use() {
+    }
 
     public static void reset() {
         id = 0;

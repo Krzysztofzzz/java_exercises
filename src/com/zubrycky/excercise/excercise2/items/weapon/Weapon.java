@@ -1,6 +1,8 @@
-package com.zubrycky.excercise.excercise2;
+package com.zubrycky.excercise.excercise2.items.weapon;
 
-public abstract class Weapon extends Item{
+import com.zubrycky.excercise.excercise2.items.Item;
+
+public abstract class Weapon extends Item {
 
     public static final double MODIFIER_CHANGE_RATE = 0.05;
     private double baseDamage;
@@ -14,27 +16,27 @@ public abstract class Weapon extends Item{
         this.baseDurability = baseDurability;
     }
 
-    public void polish(){
+    public void polish() {
 
     }
 
-    public void use(){
-        if (getDurability()>0) {
+    public void use() {
+        if (getDurability() > 0) {
             durabilityModifier -= MODIFIER_CHANGE_RATE;
             System.out.println("You use the " + getName() + ", dealing " + getDamage() + " points of damage.");
-            if (getDurability() <= 0){
+            if (getDurability() <= 0) {
                 System.out.println("The " + getName() + " breaks.");
             }
-        }else {
+        } else {
             System.out.println("You can't use the " + getName() + ", it is broken.");
         }
     }
 
-    public double getDamage(){
+    public double getDamage() {
         return baseDamage + damageModifier;
     }
 
-    public double getDurability(){
+    public double getDurability() {
         return baseDurability + durabilityModifier;
     }
 

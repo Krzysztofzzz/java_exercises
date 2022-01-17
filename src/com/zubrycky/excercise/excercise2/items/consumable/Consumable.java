@@ -1,35 +1,39 @@
-package com.zubrycky.excercise.excercise2;
+package com.zubrycky.excercise.excercise2.items.consumable;
 
-public abstract class Consumable extends Item{
-    private boolean consumed;
-    private boolean spoiled;
+import com.zubrycky.excercise.excercise2.items.Item;
+
+public abstract class Consumable extends Item {
+    private final boolean consumed;
+    private final boolean spoiled;
 
     public Consumable(String name, int value, double weight, boolean spoiled) {
         super(name, value, weight);
-        this.spoiled= spoiled;
+        this.spoiled = spoiled;
         consumed = false;
     }
 
-    public String eat(){
+    public String eat() {
         return "You eat the " + getName() + ".";
     }
 
-    public void use(){
-        if (!spoiled && !consumed){
+    public void use() {
+        if (!spoiled && !consumed) {
             eat();
-        }else if (consumed){
+        } else if (consumed) {
             System.out.println("There is nothing left of the " + getName() + " to consume.");
-        }else if (spoiled){
+        } else if (spoiled) {
             System.out.println(eat() + "\nYou feel sick.");
         }
     }
 
-    public boolean isConsumed(){
+    public boolean isConsumed() {
         return true;
     }
-    public void setConsumed(boolean consumed){}
 
-    public boolean isSpoiled(){
+    public void setConsumed(boolean consumed) {
+    }
+
+    public boolean isSpoiled() {
         return true;
     }
 
