@@ -21,11 +21,9 @@ public class Lesson18 implements Runnable {
         for (int i = 0; i < strings.length; i++) {
             print(strings[i]);
         }
-
     }
 
     void test2(Integer i, String label, String... strings) {
-
     }
 
     void loopTest() {
@@ -48,13 +46,10 @@ public class Lesson18 implements Runnable {
             //innerLoop:
             for (int j = 0; j < 6; j++) {
                 if (i != 0 && j != 0 && i % 2 == 0 && j % 2 == 0) {
-
                     continue outerLoop;
                 }
                 print("i = " + i + ", j = " + j);
             }
-
-
         }
     }
 

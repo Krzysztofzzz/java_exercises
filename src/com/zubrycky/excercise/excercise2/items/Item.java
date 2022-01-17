@@ -34,7 +34,7 @@ public abstract class Item implements Comparable<Item> {
     }
 
     public static void reset() {
-        CURRENT_ID = 0;
+        CURRENT_ID = 1;
     }
 
 
