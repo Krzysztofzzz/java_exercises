@@ -1,7 +1,9 @@
 package com.zubrycky.lesson.lesson17_exceptions;
 
 import java.io.IOException;
+import java.net.BindException;
 import java.net.ConnectException;
+import java.net.PortUnreachableException;
 import java.net.SocketException;
 
 import static com.zubrycky.utils.Utils.print;
@@ -13,8 +15,8 @@ public class Lesson17Exceptions implements Runnable {
         final IThrowException iThrowException = new IThrowSocketException();
         try {
             iThrowException.test();
-        } catch (ConnectException e) {
-            print("I cought connect exception" + e);
+        } catch (ConnectException | BindException | PortUnreachableException e) {
+            print("I cought exception: " + e);
         } catch (SocketException e) {
             print("I cought socket exception" + e);
         } catch (Exception e) {
@@ -37,7 +39,7 @@ public class Lesson17Exceptions implements Runnable {
     static class IThrowSocketException extends IThrowIOException {
         @Override
         public void test() throws SocketException {
-            throw new SocketException();
+            throw new BindException();
         }
     }
 
