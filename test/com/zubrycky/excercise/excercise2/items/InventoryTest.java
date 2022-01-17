@@ -1,26 +1,46 @@
 package com.zubrycky.excercise.excercise2.items;
 
+import com.zubrycky.excercise.excercise2.comparator.ItemComparator;
+import com.zubrycky.excercise.excercise2.comparator.ItemWeightComparator;
 import com.zubrycky.excercise.excercise2.items.consumable.Pizza;
 import com.zubrycky.excercise.excercise2.items.weapon.Bow;
 import com.zubrycky.excercise.excercise2.items.weapon.Sword;
 import org.junit.Test;
 
 import static com.zubrycky.utils.Utils.print;
-import static org.junit.Assert.*;
 
 public class InventoryTest {
+    @Test
+    public void inventorySortItemsWithWeightComparator() {
+        Bow bow1 = new Bow("Bow1", 100, 100, 5, 5);
+        Bow bow3 = new Bow("BowA", 300, 1300, 4, 56);
+        Bow bow2 = new Bow("BowA", 200, 100, 3, 56);
+        Sword sword1 = new Sword("Excalibur2", 1080,100,3,153);
+        Sword sword2= new Sword("Excalibur1", 1040,1050,3,153);
+        Sword sword3= new Sword("ExcaliburA", 15040,1050,3,145);
+        Pizza pizza = new Pizza("Pepperoni", 1,0.5, false);
+        Inventory inventory = new Inventory();
+        inventory.addMultipleItems(bow1,bow2,bow3,sword1,sword2,sword3,pizza);
+
+        ItemComparator comparator = new ItemWeightComparator();
+        inventory.sort(comparator);
+        print(inventory);
+        
+
+    }
+
     @Test
     public void inventorySortTestByValueThenName() {
         Bow bow1 = new Bow("Bow1", 100, 100, 5, 5);
         Bow bow3 = new Bow("BowB", 300, 1300, 4, 52);
         Bow bow2 = new Bow("BowA", 200, 100, 4, 56);
-
         Sword sword1 = new Sword("ExcaliburB", 1080,100,3,153);
         Sword sword2= new Sword("Excalibur2", 1040,1050,5,153);
         Sword sword3= new Sword("ExcaliburA", 15040,1050,3,145);
         Pizza pizza = new Pizza("Pepperoni", 1,0.5, false);
         Inventory inventory = new Inventory();
         inventory.addMultipleItems(bow1,bow2,bow3,sword1,sword2,sword3,pizza);
+
         print(inventory);
         inventory.sort();
         print(inventory);
