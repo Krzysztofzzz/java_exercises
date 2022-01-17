@@ -1,10 +1,10 @@
 package com.zubrycky;
 
-import com.zubrycky.lesson.lesson15_generic.Lesson15Generic;
+import com.zubrycky.lesson.lesson16_streams.Lesson16Stream;
 
 public class Main {
 
     public static void main(String[] args) {
-        new Lesson15Generic().run();
+        new Lesson16Stream().run();
     }
 }
