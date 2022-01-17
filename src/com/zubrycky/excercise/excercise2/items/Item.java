@@ -69,7 +69,7 @@ public abstract class Item implements Comparable<Item> {
 
     @Override
     public String toString() {
-        return name + "-" +
+        return name + " - " +
                 "Value: " + value +
                 ", Weight: " + weight;
     }
