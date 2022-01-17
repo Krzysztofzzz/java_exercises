@@ -1,10 +1,10 @@
 package com.zubrycky;
 
-import com.zubrycky.lesson.lesson17_exceptions.Lesson17Exceptions;
+import com.zubrycky.lesson.lesson18_vararg_labels.Lesson18;
 
 public class Main {
 
     public static void main(String[] args) {
-        new Lesson17Exceptions().run();
+        new Lesson18().run();
     }
 }
