@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 public class SwordTest {
     @Test
     public void testingPolishAndUseMethodOnSword() {
-        Sword sword = new Sword("Excalibur", 100,100,3000,15);
+        Sword sword = new Sword("Excalibur", 100, 100, 3000, 15);
 
         print(sword);
         sword.use();
@@ -18,7 +18,7 @@ public class SwordTest {
         print(sword);
         sword.use();
 
-        for (int i = 0;i<550;i++)
+        for (int i = 0; i < 550; i++)
             sword.polish();
         print(sword);
 

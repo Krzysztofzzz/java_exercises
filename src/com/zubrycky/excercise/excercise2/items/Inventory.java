@@ -18,7 +18,7 @@ public class Inventory implements ItemComparator {
         items.add(item);
     }
 
-    public void addMultipleItems(Item... items){
+    public void addMultipleItems(Item... items) {
         for (Item i : items) {
             this.items.add(i);
         }

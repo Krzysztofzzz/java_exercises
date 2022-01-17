@@ -33,7 +33,7 @@ public abstract class Consumable extends Item {
     }
 
     public void setConsumed(boolean consumed) {
-         this.consumed = consumed;
+        this.consumed = consumed;
     }
 
     public void setSpoiled(boolean spoiled) {
@@ -48,6 +48,6 @@ public abstract class Consumable extends Item {
     public String toString() {
         return super.toString() +
                 ", consumed = " + consumed +
-                ", spoiled = " + spoiled ;
+                ", spoiled = " + spoiled;
     }
 }

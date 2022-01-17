@@ -42,8 +42,8 @@ public class ItemTest {
         Item.reset();
         Bow bow5 = new Bow("A", 300, 100, 1000, 5);
         Bow bow6 = new Bow("A", 300, 100, 1000, 5);
-        assertEquals(1,bow5.getId());
-        assertEquals(2,bow6.getId());
+        assertEquals(1, bow5.getId());
+        assertEquals(2, bow6.getId());
 
     }
 

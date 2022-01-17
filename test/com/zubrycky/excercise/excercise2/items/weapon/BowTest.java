@@ -9,7 +9,7 @@ public class BowTest {
 
     @Test
     public void testingBowDurabilitiOutputWhenPolishAndUseMethodIsUsed() {
-        Bow bow = new Bow("Bow",100,100,1000,10);
+        Bow bow = new Bow("Bow", 100, 100, 1000, 10);
 
         print(bow);
         bow.use();

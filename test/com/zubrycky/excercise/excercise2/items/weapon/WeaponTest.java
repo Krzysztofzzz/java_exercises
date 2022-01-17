@@ -8,11 +8,11 @@ import static org.junit.Assert.*;
 public class WeaponTest {
     @Test
     public void testingWeaponWhenItBreaks() {
-        Bow bow = new Bow("Bow",100,100,1000,10);
+        Bow bow = new Bow("Bow", 100, 100, 1000, 10);
 
         print(bow);
 
-        for (int i = 0;i<2200;i++)
+        for (int i = 0; i < 2200; i++)
             bow.use();
 
         print(bow);
