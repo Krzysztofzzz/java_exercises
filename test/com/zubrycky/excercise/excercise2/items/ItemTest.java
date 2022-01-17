@@ -3,7 +3,6 @@ package com.zubrycky.excercise.excercise2.items;
 import com.zubrycky.excercise.excercise2.items.weapon.Bow;
 import org.junit.Test;
 
-import static com.zubrycky.utils.Utils.print;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -48,14 +47,4 @@ public class ItemTest {
 
     }
 
-    @Test
-    public void testingToStringOverride() {
-        Bow bow1 = new Bow("Bow1", 100, 100, 3000, 5);
-        Bow bow2 = new Bow("Z", 200, 100, 1000, 5);
-        Bow bow3 = new Bow("A", 300, 100, 1000, 5);
-        Bow bow4 = new Bow("A", 300, 100, 1000, 5);
-
-        print(bow1);
-        print(bow2);
-    }
 }
