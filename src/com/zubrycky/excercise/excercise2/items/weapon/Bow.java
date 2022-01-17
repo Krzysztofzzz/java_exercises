@@ -7,7 +7,7 @@ public class Bow extends Weapon {
 
     @Override
     public void polish() {
-        if (getDurability() < 1) {
+        if (getDurability() < 100) {
             setDurabilityModifier(getDurabilityModifier() + Weapon.MODIFIER_CHANGE_RATE);
             System.out.println(getName() + " durability increased.");
         } else {
