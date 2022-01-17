@@ -2,14 +2,17 @@ package com.zubrycky.excercise.excercise2.items;
 
 public abstract class Item implements Comparable<Item> {
 
-    private static int numberOfItems;
-    private static int id = 0;
+    private static int NUMBER_OF_ITEMS;
+    private static int CURRENT_ID = 1;
+    private int id = 0;
     private int value;
     private String name;
     private double weight;
 
     public Item(String name, int value, double weight) {
-        id++;
+        id = CURRENT_ID;
+        CURRENT_ID++;
+
         this.name = name;
         this.value = value;
         this.weight = weight;
@@ -31,7 +34,7 @@ public abstract class Item implements Comparable<Item> {
     }
 
     public static void reset() {
-        id = 0;
+        CURRENT_ID = 0;
     }
 
 

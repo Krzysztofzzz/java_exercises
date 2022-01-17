@@ -19,7 +19,7 @@ public class Inventory implements ItemComparator {
 
     public void sort() {
         Collections.sort(items);
-
+        //items.sort(this);
     }
 
     public void sort(ItemComparator comparator) {
