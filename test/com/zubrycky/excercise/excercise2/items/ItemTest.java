@@ -1,12 +1,17 @@
 package com.zubrycky.excercise.excercise2.items;
 
 import com.zubrycky.excercise.excercise2.items.weapon.Bow;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class ItemTest {
+    @Before
+    public void beforeReset(){
+        Item.reset();
+    }
     @Test
     public void whenCreatingNewItemsThenTheyHaveDifferentIds() {
         Bow bow1 = new Bow("Bow1", 100, 100, 1000, 5);
