@@ -1,5 +1,6 @@
 package com.zubrycky.excercise.excercise2.items.consumable;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import static com.zubrycky.utils.Utils.print;
@@ -31,5 +32,11 @@ public class ConsumableTest {
         print(pizza);
         pizza.setSpoiled(pizza.isSpoiled());
         print(pizza);
+    }
+
+    @Test
+    public void whenCreatingNewConsumableIsConsumedReturnsFalse() {
+        Pizza pizza = new Pizza("Pepperoni", 20, 0.5, false);
+        Assert.assertFalse(pizza.isConsumed());
     }
 }
