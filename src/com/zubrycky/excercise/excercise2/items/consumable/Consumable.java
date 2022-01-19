@@ -29,7 +29,7 @@ public abstract class Consumable extends Item {
     }
 
     public boolean isConsumed() {
-        return consumed = true;
+        return consumed;
     }
 
     public void setConsumed(boolean consumed) {
@@ -41,7 +41,7 @@ public abstract class Consumable extends Item {
     }
 
     public boolean isSpoiled() {
-        return spoiled = true;
+        return spoiled;
     }
 
     @Override

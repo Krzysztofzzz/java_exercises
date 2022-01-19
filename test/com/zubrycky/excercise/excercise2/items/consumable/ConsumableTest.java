@@ -38,5 +38,17 @@ public class ConsumableTest {
     public void whenCreatingNewConsumableIsConsumedReturnsFalse() {
         Pizza pizza = new Pizza("Pepperoni", 20, 0.5, false);
         Assert.assertFalse(pizza.isConsumed());
+        pizza.setConsumed(true);
+        Assert.assertTrue(pizza.isConsumed());
+
+
+    }
+
+    @Test
+    public void whenSettingPizzaAsSpoiledThenIsSpoiledReturnsTrue() {
+        Pizza pizza = new Pizza("Pepperoni", 20, 0.5, false);
+        Assert.assertFalse(pizza.isSpoiled());
+        pizza.setSpoiled(true);
+        Assert.assertTrue(pizza.isSpoiled());
     }
 }
