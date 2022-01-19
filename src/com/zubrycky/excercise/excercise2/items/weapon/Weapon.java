@@ -16,9 +16,7 @@ public abstract class Weapon extends Item {
         this.baseDurability = baseDurability;
     }
 
-    public void polish() {
-
-    }
+    abstract public void polish();
 
     public void use() {
         if (getDurability() > 0) {

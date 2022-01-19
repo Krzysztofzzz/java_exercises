@@ -34,7 +34,7 @@ public abstract class Item implements Comparable<Item> {
     }
 
     public static void reset() {
-        CURRENT_ID = 0;
+        CURRENT_ID = 1;
     }
 
 
@@ -69,7 +69,7 @@ public abstract class Item implements Comparable<Item> {
 
     @Override
     public String toString() {
-        return name + "-" +
+        return name + " - " +
                 "Value: " + value +
                 ", Weight: " + weight;
     }
