@@ -13,19 +13,20 @@ public abstract class Consumable extends Item {
     }
 
     public String eat() {
-        return "You eat the " + getName() + ".";
+        if (!spoiled && !consumed) {
+            setConsumed(true);
+            return "You eat the " + getName() + ".";
+        } else if (consumed) {
+            return "There is nothing left of the " + getName() + " to consume.";
+        } else {
+            setConsumed(true);
+            return "You eat the " + getName() + "." + "\nYou feel sick.";
+        }
+
     }
 
     public void use() {
-        if (!spoiled && !consumed) {
-            System.out.println(eat());
-            setConsumed(isConsumed());
-        } else if (consumed) {
-            System.out.println("There is nothing left of the " + getName() + " to consume.");
-        } else if (spoiled) {
-            System.out.println(eat() + "\nYou feel sick.");
-            setConsumed(isConsumed());
-        }
+        System.out.println(eat());
     }
 
     public boolean isConsumed() {
