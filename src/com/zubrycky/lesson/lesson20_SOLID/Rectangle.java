@@ -1,6 +1,6 @@
 package com.zubrycky.lesson.lesson20_SOLID;
 
-public class Rectangle {
+public class Rectangle extends Shape{
     private double width;
     private double height;
 
@@ -15,5 +15,10 @@ public class Rectangle {
 
     public double getHeight() {
         return height;
+    }
+
+    @Override
+    double getArea() {
+        return width*height;
     }
 }

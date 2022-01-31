@@ -1,6 +1,7 @@
 package com.zubrycky.lesson.lesson20_SOLID;
 
 public class AreaCalculatorBadExample {
+
     public double calculateRectangleArea(Rectangle rectangle) {
         return rectangle.getHeight() * rectangle.getWidth();
     }

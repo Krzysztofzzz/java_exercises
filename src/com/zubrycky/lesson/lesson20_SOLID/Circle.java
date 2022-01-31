@@ -1,6 +1,6 @@
 package com.zubrycky.lesson.lesson20_SOLID;
 
-public class Circle {
+public class Circle extends Shape{
     private double radius;
 
     public Circle(double radius) {
@@ -9,5 +9,10 @@ public class Circle {
 
     public double getRadius() {
         return radius;
+    }
+
+    @Override
+    double getArea() {
+        return Math.PI*radius*radius;
     }
 }
