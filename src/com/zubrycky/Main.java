@@ -1,10 +1,10 @@
 package com.zubrycky;
 
-import com.zubrycky.lesson.lesson19_treemap.Lesson19TreeMap;
+import com.zubrycky.lesson.lesson20_SOLID.Lesson20_SOLID;
 
 public class Main {
 
     public static void main(String[] args) {
-        new Lesson19TreeMap().run();
+        new Lesson20_SOLID().run();
     }
 }
