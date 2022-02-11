@@ -23,4 +23,34 @@ public class Airplane {
                 ", colour='" + colour + '\'' +
                 '}';
     }
+
+    public static class Builder {
+
+        private int numberOfDoors = 1;
+        private int numberOfWings = 2;
+        private String colour = "White";
+
+        public Builder() {
+        }
+
+        public Airplane build() {
+            return new Airplane(numberOfDoors, numberOfWings, colour);
+        }
+
+        public Builder setNumberOfDoors(int numberOfDoors) {
+            this.numberOfDoors = numberOfDoors;
+            return this;
+        }
+
+        public Builder setNumberOfWings(int numberOfWings) {
+            this.numberOfWings = numberOfWings;
+            return this;
+
+        }
+
+        public Builder setColour(String colour) {
+            this.colour = colour;
+            return this;
+        }
+    }
 }
