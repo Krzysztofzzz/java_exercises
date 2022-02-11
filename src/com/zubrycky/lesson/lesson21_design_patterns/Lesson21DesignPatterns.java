@@ -23,6 +23,15 @@ public class Lesson21DesignPatterns implements Runnable {
 
         print(airplane4);
 
+        StringBuilder stringBuilder = new StringBuilder("Ala ma kota");
+        print(stringBuilder);
+        stringBuilder.replace(7, 11, "koty");
+        print(stringBuilder);
+        stringBuilder.insert(7, "cztery ");
+        stringBuilder.append(" i psa.");
+
+        print(stringBuilder.toString());
+
 
     }
 }
