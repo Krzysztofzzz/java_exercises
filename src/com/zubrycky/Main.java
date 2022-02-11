@@ -1,10 +1,10 @@
 package com.zubrycky;
 
-import com.zubrycky.lesson.lesson20_SOLID.Lesson20_SOLID;
+import com.zubrycky.lesson.lesson21_design_patterns.Lesson21DesignPatterns;
 
 public class Main {
 
     public static void main(String[] args) {
-        new Lesson20_SOLID().run();
+        new Lesson21DesignPatterns().run();
     }
 }
