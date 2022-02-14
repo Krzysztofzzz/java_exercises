@@ -1,6 +1,10 @@
 package com.zubrycky.lesson.lesson21_design_patterns;
 
 import com.zubrycky.lesson.lesson21_design_patterns.builder.Airplane;
+import com.zubrycky.lesson.lesson21_design_patterns.decorator.ConsoleLogger;
+import com.zubrycky.lesson.lesson21_design_patterns.decorator.DateTimeLoggerDecorator;
+import com.zubrycky.lesson.lesson21_design_patterns.decorator.Logger;
+import com.zubrycky.lesson.lesson21_design_patterns.decorator.NiceDashesLoggerDecorator;
 
 import static com.zubrycky.utils.Utils.print;
 
@@ -8,10 +12,17 @@ public class Lesson21DesignPatterns implements Runnable {
 
     @Override
     public void run() {
+        // singletonExample();
+        // builderExample();
+        decoratorExample();
+    }
 
+    private void singletonExample() {
         //Logger logger = Logger.getInstance();
         //logger.log("coś tam");
+    }
 
+    private void builderExample() {
         Airplane airplane1 = new Airplane(1, Airplane.DEFAULT_NUMBER_OF_WINGS, Airplane.DEFAULT_COLOUR);
         Airplane airplane2 = new Airplane(2, Airplane.DEFAULT_NUMBER_OF_WINGS, "Red");
         Airplane airplane3 = new Airplane(3, 1, Airplane.DEFAULT_COLOUR);
@@ -31,7 +42,10 @@ public class Lesson21DesignPatterns implements Runnable {
         stringBuilder.append(" i psa.");
 
         print(stringBuilder.toString());
+    }
 
-
+    private void decoratorExample() {
+        final Logger logger = new DateTimeLoggerDecorator(new NiceDashesLoggerDecorator(new ConsoleLogger()));
+        logger.log("example message");
     }
 }
