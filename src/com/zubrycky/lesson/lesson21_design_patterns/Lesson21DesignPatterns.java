@@ -1,12 +1,18 @@
 package com.zubrycky.lesson.lesson21_design_patterns;
 
 import com.zubrycky.lesson.lesson21_design_patterns.builder.Airplane;
+import com.zubrycky.lesson.lesson21_design_patterns.composite.MilitaryUnit;
+import com.zubrycky.lesson.lesson21_design_patterns.composite.Warrior;
+import com.zubrycky.lesson.lesson21_design_patterns.composite.Warriors;
 import com.zubrycky.lesson.lesson21_design_patterns.decorator.logger.ConsoleLogger;
 import com.zubrycky.lesson.lesson21_design_patterns.decorator.logger.DashesLoggerDecorator;
 import com.zubrycky.lesson.lesson21_design_patterns.decorator.logger.DateTimeLoggerDecorator;
 import com.zubrycky.lesson.lesson21_design_patterns.decorator.logger.Logger;
 import com.zubrycky.lesson.lesson21_design_patterns.facade.Package;
 import com.zubrycky.lesson.lesson21_design_patterns.facade.PackageFacade;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.zubrycky.utils.Utils.print;
 
@@ -17,11 +23,33 @@ public class Lesson21DesignPatterns implements Runnable {
         //singletonPatternTest();
         //builderPatternTest();
         //decoratorPatternTest();
-        facadePatternTest();
-
+        //facadePatternTest();
+        compositeTest();
     }
 
-    private void facadePatternTest(){
+    private void compositeTest() {
+        Warrior warrior1 = new Warrior();
+        Warrior warrior2 = new Warrior();
+        Warrior warrior3 = new Warrior();
+        Warrior warrior4 = new Warrior();
+        Warrior warrior5 = new Warrior();
+        Warrior warrior6 = new Warrior();
+
+        Warriors warriors = new Warriors();
+        warriors.addWarrior(warrior2);
+        warriors.addWarrior(warrior4);
+
+        List<MilitaryUnit> militaryUnits = new ArrayList<>();
+        militaryUnits.add(warrior3);
+        militaryUnits.add(warrior5);
+        militaryUnits.add(warriors);
+
+        for (MilitaryUnit m : militaryUnits) {
+            m.goRight();
+        }
+    }
+
+    private void facadePatternTest() {
         PackageFacade packageFacade = new PackageFacade();
         Package p = new Package();
         packageFacade.sendPackage(p);
