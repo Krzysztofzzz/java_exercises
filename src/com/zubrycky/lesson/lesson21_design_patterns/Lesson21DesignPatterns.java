@@ -2,6 +2,7 @@ package com.zubrycky.lesson.lesson21_design_patterns;
 
 import com.zubrycky.lesson.lesson21_design_patterns.builder.Airplane;
 import com.zubrycky.lesson.lesson21_design_patterns.decorator.logger.ConsoleLogger;
+import com.zubrycky.lesson.lesson21_design_patterns.decorator.logger.DateTimeLoggerDecorator;
 import com.zubrycky.lesson.lesson21_design_patterns.decorator.logger.Logger;
 
 import static com.zubrycky.utils.Utils.print;
@@ -17,8 +18,8 @@ public class Lesson21DesignPatterns implements Runnable {
 
     }
 
-    private void decoratorPatternTest(){
-        Logger logger = new ConsoleLogger();
+    private void decoratorPatternTest() {
+        Logger logger = new DateTimeLoggerDecorator(new ConsoleLogger());
         logger.log("Hello world");
     }
 
