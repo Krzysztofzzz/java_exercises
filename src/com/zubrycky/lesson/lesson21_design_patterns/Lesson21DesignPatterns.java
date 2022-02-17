@@ -2,6 +2,7 @@ package com.zubrycky.lesson.lesson21_design_patterns;
 
 import com.zubrycky.lesson.lesson21_design_patterns.builder.Airplane;
 import com.zubrycky.lesson.lesson21_design_patterns.decorator.logger.ConsoleLogger;
+import com.zubrycky.lesson.lesson21_design_patterns.decorator.logger.DashesLoggerDecorator;
 import com.zubrycky.lesson.lesson21_design_patterns.decorator.logger.DateTimeLoggerDecorator;
 import com.zubrycky.lesson.lesson21_design_patterns.decorator.logger.Logger;
 
@@ -19,7 +20,7 @@ public class Lesson21DesignPatterns implements Runnable {
     }
 
     private void decoratorPatternTest() {
-        Logger logger = new DateTimeLoggerDecorator(new ConsoleLogger());
+        Logger logger = new DateTimeLoggerDecorator(new DashesLoggerDecorator(new ConsoleLogger()));
         logger.log("Hello world");
     }
 
