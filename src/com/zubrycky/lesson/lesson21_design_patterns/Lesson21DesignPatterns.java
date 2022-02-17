@@ -5,6 +5,8 @@ import com.zubrycky.lesson.lesson21_design_patterns.decorator.logger.ConsoleLogg
 import com.zubrycky.lesson.lesson21_design_patterns.decorator.logger.DashesLoggerDecorator;
 import com.zubrycky.lesson.lesson21_design_patterns.decorator.logger.DateTimeLoggerDecorator;
 import com.zubrycky.lesson.lesson21_design_patterns.decorator.logger.Logger;
+import com.zubrycky.lesson.lesson21_design_patterns.facade.Package;
+import com.zubrycky.lesson.lesson21_design_patterns.facade.PackageFacade;
 
 import static com.zubrycky.utils.Utils.print;
 
@@ -14,9 +16,15 @@ public class Lesson21DesignPatterns implements Runnable {
     public void run() {
         //singletonPatternTest();
         //builderPatternTest();
-        decoratorPatternTest();
+        //decoratorPatternTest();
+        facadePatternTest();
 
+    }
 
+    private void facadePatternTest(){
+        PackageFacade packageFacade = new PackageFacade();
+        Package p = new Package();
+        packageFacade.sendPackage(p);
     }
 
     private void decoratorPatternTest() {
