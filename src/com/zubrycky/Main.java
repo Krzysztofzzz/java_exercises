@@ -1,10 +1,10 @@
 package com.zubrycky;
 
-import com.zubrycky.lesson.lesson21_design_patterns.Lesson21DesignPatterns;
+import com.zubrycky.excercise.excercise3.Excercise3CharacterCounter;
 
 public class Main {
 
     public static void main(String[] args) {
-        new Lesson21DesignPatterns().run();
+        new Excercise3CharacterCounter().run();
     }
 }
