@@ -1,7 +1,7 @@
 package com.zubrycky.excercise.excercise3;
 
 public class Excercise3CharacterCounter implements Runnable{
-    private String input = "A  bb";
+    private String input = "";
     @Override
     public void run() {
         CharacterCounter characterCounter = new CharacterCounter();
