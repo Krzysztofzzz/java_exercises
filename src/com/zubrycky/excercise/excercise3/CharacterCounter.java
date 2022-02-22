@@ -2,23 +2,26 @@ package com.zubrycky.excercise.excercise3;
 
 public class CharacterCounter {
     public String countLetters(String input) {
-        input = input.concat(" ");
+        if (input.isEmpty())
+            return "";
         String output = "";
-        Integer characterCounter = 1;
-        Character currentChar;
-        Character nextChar;
+        int characterCounter = 1;
+        char currentChar = input.charAt(0);
+        char nextChar;
 
-        for (int i = 0; i < input.length()-1; i++) {
-            currentChar = input.charAt(i);
-            nextChar = input.charAt(i + 1);
-            if (currentChar.equals(nextChar)) {
+        for (int i = 1; i < input.length(); i++) {
+            nextChar = input.charAt(i);
+            if (currentChar == nextChar) {
                 characterCounter++;
             } else {
-                output = output.concat(currentChar.toString()).concat(characterCounter.toString());
+                output = output.concat(String.valueOf(currentChar)).concat(Integer.toString(characterCounter));
                 characterCounter = 1;
+                currentChar = nextChar;
 
             }
         }
+        output = output.concat(String.valueOf(currentChar)).concat(Integer.toString(characterCounter));
+
         return output;
     }
 }
