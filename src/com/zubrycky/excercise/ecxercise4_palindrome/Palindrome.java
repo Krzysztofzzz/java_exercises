@@ -2,16 +2,19 @@ package com.zubrycky.excercise.ecxercise4_palindrome;
 
 public class Palindrome {
 
-    String reversedString;
+    String reversedString = "";
+    char reversedChar;
 
     public boolean isPalindrome(String input) {
 
-        if (input.isEmpty() || input.length() == 1) {
+        int length = input.length();
+
+        if (input.isEmpty() || length == 1) {
             return true;
         }
-        for (int i = input.length(); i == 0; i--) {
-            Character reversedChar = input.charAt(i);
-            reversedString += reversedChar.toString();
+        for (length = length - 1; length > -1; length--) {
+            reversedChar = input.charAt(length);
+            reversedString += Character.toString(reversedChar);
         }
         if (input.equals(reversedString)) {
             return true;

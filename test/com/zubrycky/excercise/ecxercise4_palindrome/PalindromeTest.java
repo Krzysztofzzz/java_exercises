@@ -21,4 +21,36 @@ public class PalindromeTest {
         boolean check = palindrome.isPalindrome(input);
         assertEquals(true, check);
     }
+
+    @Test
+    public void whenInputHasTwoSameCharactersReturnsTrue() {
+        Palindrome palindrome = new Palindrome();
+        String input = "aa";
+        boolean check = palindrome.isPalindrome(input);
+        assertEquals(true, check);
+    }
+
+    @Test
+    public void whenInputHasTwoDifferentCharactersReturnsFalse() {
+        Palindrome palindrome = new Palindrome();
+        String input = "ab";
+        boolean check = palindrome.isPalindrome(input);
+        assertEquals(false, check);
+    }
+
+    @Test
+    public void whenInputIsAPalindromeReturnTrue() {
+        Palindrome palindrome = new Palindrome();
+        String input = "abcba";
+        boolean check = palindrome.isPalindrome(input);
+        assertEquals(true, check);
+    }
+
+    @Test
+    public void whenInputIsNotAPalindromeReturnFalse() {
+        Palindrome palindrome = new Palindrome();
+        String input = "ergsggare";
+        boolean check = palindrome.isPalindrome(input);
+        assertEquals(false, check);
+    }
 }
