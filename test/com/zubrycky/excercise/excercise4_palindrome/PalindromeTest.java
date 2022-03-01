@@ -1,4 +1,4 @@
-package com.zubrycky.excercise.ecxercise4_palindrome;
+package com.zubrycky.excercise.excercise4_palindrome;
 
 import org.junit.Test;
 
