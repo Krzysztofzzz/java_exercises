@@ -11,6 +11,7 @@ import com.zubrycky.lesson.lesson21_design_patterns.decorator.logger.DateTimeLog
 import com.zubrycky.lesson.lesson21_design_patterns.decorator.logger.Logger;
 import com.zubrycky.lesson.lesson21_design_patterns.facade.Package;
 import com.zubrycky.lesson.lesson21_design_patterns.facade.PackageFacade;
+import com.zubrycky.lesson.lesson21_design_patterns.factory.FactoryRunner;
 import com.zubrycky.lesson.lesson21_design_patterns.strategy.PriceCalculatorRunner;
 
 import java.util.ArrayList;
@@ -28,7 +29,13 @@ public class Lesson21DesignPatterns implements Runnable {
         //facadePatternTest();
         //compositeTest();
         //adapterTest();
-        strategyTest();
+        //strategyTest();
+        factoryTest();
+    }
+
+    private void factoryTest(){
+        FactoryRunner factoryRunner = new FactoryRunner();
+        factoryRunner.run();
     }
 
     private void strategyTest(){
