@@ -25,7 +25,7 @@ public class ArmstrongNumberTest {
     @Test
     public void whenNumberIsArmstrongNumberReturnsTrue() {
         ArmstrongNumber armstrongNumber = new ArmstrongNumber();
-        int number = 8208;
+        int number = 153;
         boolean check = armstrongNumber.isArmstrongNumber(number);
         assertEquals(true, check);
     }
