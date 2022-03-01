@@ -11,6 +11,7 @@ import com.zubrycky.lesson.lesson21_design_patterns.decorator.logger.DateTimeLog
 import com.zubrycky.lesson.lesson21_design_patterns.decorator.logger.Logger;
 import com.zubrycky.lesson.lesson21_design_patterns.facade.Package;
 import com.zubrycky.lesson.lesson21_design_patterns.facade.PackageFacade;
+import com.zubrycky.lesson.lesson21_design_patterns.strategy.PriceCalculatorRunner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,9 +27,14 @@ public class Lesson21DesignPatterns implements Runnable {
         //decoratorPatternTest();
         //facadePatternTest();
         //compositeTest();
-        adapterTest();
+        //adapterTest();
+        strategyTest();
     }
 
+    private void strategyTest(){
+        PriceCalculatorRunner priceCalculatorRunner = new PriceCalculatorRunner();
+        priceCalculatorRunner.run();
+    }
     private void adapterTest() {
         NewCar newCar = new NewCar();
         OldCar oldCar = new OldCar();
