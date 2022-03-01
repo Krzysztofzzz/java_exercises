@@ -1,9 +1,6 @@
 package com.zubrycky.lesson.lesson21_design_patterns;
 
-import com.zubrycky.lesson.lesson21_design_patterns.adapter.CarKmh;
-import com.zubrycky.lesson.lesson21_design_patterns.adapter.CarMphToKmhAdapter;
-import com.zubrycky.lesson.lesson21_design_patterns.adapter.NewCar;
-import com.zubrycky.lesson.lesson21_design_patterns.adapter.OldCar;
+import com.zubrycky.lesson.lesson21_design_patterns.adapter.*;
 import com.zubrycky.lesson.lesson21_design_patterns.builder.Airplane;
 import com.zubrycky.lesson.lesson21_design_patterns.composite.MilitaryUnit;
 import com.zubrycky.lesson.lesson21_design_patterns.composite.Warrior;
@@ -36,12 +33,21 @@ public class Lesson21DesignPatterns implements Runnable {
         NewCar newCar = new NewCar();
         OldCar oldCar = new OldCar();
 
-        List<CarKmh> cars = new ArrayList<>();
-        cars.add(newCar);
-        cars.add(new CarMphToKmhAdapter(oldCar));
+        List<CarKmh> carsKmh = new ArrayList<>();
+        carsKmh.add(newCar);
+        carsKmh.add(new CarMphToKmhAdapter(oldCar));
 
-        for (CarKmh c : cars) {
+        List<CarMph> carsMph = new ArrayList<>();
+        carsMph.add(new CarKmhToMphAdapter(newCar));
+        carsMph.add(oldCar);
+
+        for (CarKmh c : carsKmh) {
             print(c.getMaximumSpeed());
+        }
+
+        for (CarMph c:carsMph) {
+            print(c.getMaxSpeed());
+
         }
     }
 
