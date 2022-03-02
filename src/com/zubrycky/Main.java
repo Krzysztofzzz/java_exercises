@@ -1,11 +1,11 @@
 package com.zubrycky;
 
-import com.zubrycky.lesson.lesson21_design_patterns.Lesson21DesignPatterns;
+import com.zubrycky.excercise.excercise6_floyds_triangle.FloydsTriangle;
 
 public class Main {
 
     public static void main(String[] args) {
-        new Lesson21DesignPatterns().run();
+        new FloydsTriangle().printFloydsTriangle();
 
     }
 }
