@@ -14,8 +14,7 @@ public class PascalTriangle {
 
     public void printPascalTriangle() {
         while (true) {
-            print("Podaj ilość rzędów w trójkącie Pascala:");
-            numberOfRows = scanner.nextInt();
+            scanNumberOfRows();
             if (numberOfRows == 1) {
                 printIfOneRow();
                 clearLists();
@@ -26,19 +25,12 @@ public class PascalTriangle {
                 printIfTwoRows();
                 int indexOfCurrentRow = 1;
                 for (int i = 2; i < numberOfRows; i++) {
-                    previousRow.clear();
-                    for (int x = 0; x < currentRow.size(); x++) {
-                        previousRow.add(currentRow.get(x));
-                    }
-                    currentRow.clear();
+                    transferCurrentToPreviousList();
                     currentRow.add(1);
                     indexOfCurrentRow += 1;
-                    int amountOfNumbersInCurrentRow = indexOfCurrentRow;
 
-                    for (int j = 1; j < amountOfNumbersInCurrentRow; j++) {
-
-                        currentRow.add(previousRow.get(j - 1) + previousRow.get(j));
-
+                    for (int j = 1; j < indexOfCurrentRow; j++) {
+                        addNextNumberToCurrentRow(j);
                     }
                     currentRow.add(1);
                     print(currentRow);
@@ -48,6 +40,23 @@ public class PascalTriangle {
         }
 
 
+    }
+
+    private void scanNumberOfRows() {
+        print("Podaj ilość rzędów w trójkącie Pascala:");
+        numberOfRows = scanner.nextInt();
+    }
+
+    private void addNextNumberToCurrentRow(int j) {
+        currentRow.add(previousRow.get(j - 1) + previousRow.get(j));
+    }
+
+    private void transferCurrentToPreviousList() {
+        previousRow.clear();
+        for (int x = 0; x < currentRow.size(); x++) {
+            previousRow.add(currentRow.get(x));
+        }
+        currentRow.clear();
     }
 
     private void printIfOneRow() {
