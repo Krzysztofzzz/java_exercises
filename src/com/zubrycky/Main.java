@@ -1,11 +1,11 @@
 package com.zubrycky;
 
-import com.zubrycky.excercise.excercise6_floyds_triangle.FloydsTriangle;
+import com.zubrycky.excercise.excercise7_pascal_triangle.PascalTriangle;
 
 public class Main {
 
     public static void main(String[] args) {
-        new FloydsTriangle().printFloydsTriangle();
+        new PascalTriangle().printPascalTriangle();
 
     }
 }
