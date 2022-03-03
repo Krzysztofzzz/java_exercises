@@ -13,16 +13,16 @@ public class PascalTriangle2 {
             final int numberOfRows = scanNumberOfRows();
             final int[][] matrix = new int[numberOfRows][numberOfRows];
             matrix[0][0] = 1;
-            for (int i = 1; i < numberOfRows; i++) {
-                for (int j = 0; j < numberOfRows; j++) {
-                    final int top = matrix[i - 1][j];
+            for (int rowNumber = 1; rowNumber < numberOfRows; rowNumber++) {
+                for (int columnNumber = 0; columnNumber < numberOfRows; columnNumber++) {
+                    final int top = matrix[rowNumber - 1][columnNumber];
                     final int topLeft;
-                    if (j == 0) {
+                    if (columnNumber == 0) {
                         topLeft = 0;
                     } else {
-                        topLeft = matrix[i - 1][j - 1];
+                        topLeft = matrix[rowNumber - 1][columnNumber - 1];
                     }
-                    matrix[i][j] = top + topLeft;
+                    matrix[rowNumber][columnNumber] = top + topLeft;
                 }
             }
             printMatrix(matrix);
@@ -30,15 +30,15 @@ public class PascalTriangle2 {
     }
 
     private void printMatrix(int[][] matrix) {
-        for (int i = 0; i < matrix.length; i++) {
-            final int[] row = matrix[i];
+        for (int rowNumber = 0; rowNumber < matrix.length; rowNumber++) {
+            final int[] row = matrix[rowNumber];
             final StringBuilder string = new StringBuilder();
-            for (int j = 0; j < row.length; j++) {
-                if (row[j] == 0) {
-                    continue;
+            for (int columnNumber = 0; columnNumber < row.length; columnNumber++) {
+                if (row[columnNumber] == 0) {
+                    break;
                 }
-                string.append(row[j]);
-                if (j < i) {
+                string.append(row[columnNumber]);
+                if (columnNumber < rowNumber) {
                     string.append(", ");
                 }
             }
