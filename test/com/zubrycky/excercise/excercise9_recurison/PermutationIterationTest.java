@@ -23,7 +23,7 @@ public class PermutationIterationTest {
     @Test
     public void printAllPermutationsOfGivenString() {
         PermutationIteration permutation = new PermutationIteration();
-        String input = "1234567";
+        String input = "1234";
 
         permutation.permutate(input);
     }

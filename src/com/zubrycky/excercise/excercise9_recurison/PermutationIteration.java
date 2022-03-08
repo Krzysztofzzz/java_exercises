@@ -1,26 +1,28 @@
 package com.zubrycky.excercise.excercise9_recurison;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PermutationIteration {
 
     public void permutate(String input) {
-        StringBuilder stringBuilder = new StringBuilder(input);
-        System.out.println(input);
+        if (input == null || input.length() == 0 ){
+            return;
+        }
+        List<String> partial = new ArrayList<>();
 
-        if (!input.isEmpty()) {
-            for (int i = input.length() - 1; i > 0; i--) {
-                char move = input.charAt(i);
-                stringBuilder.deleteCharAt(i);
+        partial.add(String.valueOf(input.charAt(0)));
 
-                for (int position = 0; position < input.length(); position++) {
-                    stringBuilder.insert(position, move);
-                    if (stringBuilder.toString().equals(input)){
-                        break;
-                    }
-                    System.out.println(stringBuilder);
-                    stringBuilder.deleteCharAt(position);
+        for (int i = 1; i<input.length(); i++){
+            for (int j = partial.size() - 1; j>=0; j--){
+
+                String s = partial.remove(j);
+
+                for (int k = 0; k<=s.length(); k++){
+                    partial.add(s.substring(0,k) + input.charAt(i) + s.substring(k));
                 }
-
             }
-        } else System.err.println("Brak tekstu");
+        }
+        System.out.println(partial);
     }
 }
