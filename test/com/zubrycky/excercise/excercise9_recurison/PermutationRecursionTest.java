@@ -22,7 +22,7 @@ public class PermutationRecursionTest {
     @Test
     public void printAllPermutationsOfGivenString() {
         PermutationRecursion permutation = new PermutationRecursion();
-        String input = "ABCD";
+        String input = "1234";
 
         permutation.permutate(input,0);
     }
