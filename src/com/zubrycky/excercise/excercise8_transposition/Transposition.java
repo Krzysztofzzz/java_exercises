@@ -3,7 +3,6 @@ package com.zubrycky.excercise.excercise8_transposition;
 public class Transposition {
 
     public int[][] transpose(int[][] matrix) {
-        printMatrix(matrix);
 
         int rows = matrix.length;
         int columns = matrix[0].length;
@@ -17,12 +16,10 @@ public class Transposition {
             }
         }
 
-        printMatrix(transMatrix);
-
         return transMatrix;
     }
 
-    private void printMatrix(int[][] matrix) {
+/*    private void printMatrix(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
                 System.out.print(matrix[i][j] + " ");
@@ -30,5 +27,5 @@ public class Transposition {
             System.out.println();
         }
         System.out.println();
-    }
+    }*/
 }

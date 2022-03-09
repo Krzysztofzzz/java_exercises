@@ -1,8 +1,7 @@
 package com.zubrycky.excercise.excercise8_transposition;
 
+import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class TranspositionTest {
 
@@ -12,6 +11,7 @@ public class TranspositionTest {
         Transposition transposition = new Transposition();
 
         int transMatrix[][] = transposition.transpose(matrix);
+        Assert.assertArrayEquals(matrix,transMatrix);
     }
 
     @Test
@@ -20,6 +20,9 @@ public class TranspositionTest {
         Transposition transposition = new Transposition();
 
         int transMatrix[][] = transposition.transpose(matrix);
+        int expectedMatrix[][] = {{1},{2},{3},{4},{5},{6},{7}};
+        Assert.assertArrayEquals(expectedMatrix,transMatrix);
+
     }
 
     @Test
@@ -28,6 +31,9 @@ public class TranspositionTest {
         Transposition transposition = new Transposition();
 
         int transMatrix[][] = transposition.transpose(matrix);
+
+        int expectedMatrix[][] = {{1,2,3,4}};
+        Assert.assertArrayEquals(expectedMatrix,transMatrix);
     }
 
     @Test
@@ -37,5 +43,8 @@ public class TranspositionTest {
         Transposition transposition = new Transposition();
 
         int transMatrix[][] = transposition.transpose(matrix);
+
+        int expectedMatrix[][] = {{1,6,11}, {2,7,12}, {3,8,13},{4,9,14},{5,10,15}};
+        Assert.assertArrayEquals(expectedMatrix,transMatrix);
     }
 }
