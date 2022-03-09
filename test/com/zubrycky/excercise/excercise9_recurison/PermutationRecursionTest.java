@@ -2,15 +2,13 @@ package com.zubrycky.excercise.excercise9_recurison;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class PermutationRecursionTest {
     @Test
     public void whenStringIsEmptyReturnsErrorMessage() {
         PermutationRecursion permutation = new PermutationRecursion();
         String input = "";
 
-        permutation.permutate(input);
+        permutation.permutate(input,0);
     }
 
     @Test
@@ -18,15 +16,15 @@ public class PermutationRecursionTest {
         PermutationRecursion permutation = new PermutationRecursion();
         String input = "a";
 
-        permutation.permutate(input);
+        permutation.permutate(input,0);
     }
 
     @Test
     public void printAllPermutationsOfGivenString() {
         PermutationRecursion permutation = new PermutationRecursion();
-        String input = "1234";
+        String input = "ABCD";
 
-        permutation.permutate(input);
+        permutation.permutate(input,0);
     }
 
 }
