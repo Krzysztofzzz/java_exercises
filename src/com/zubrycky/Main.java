@@ -1,11 +1,10 @@
 package com.zubrycky;
 
-import com.zubrycky.excercise.excercise7_pascal_triangle.PascalTriangle2;
+import com.zubrycky.lesson.lesson23_thread.Lesson23Threads;
 
 public class Main {
 
     public static void main(String[] args) {
-        new PascalTriangle2().printPascalTriangle();
-
+        new Lesson23Threads().run();
     }
 }
