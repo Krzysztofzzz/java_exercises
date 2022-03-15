@@ -7,15 +7,55 @@ import static org.junit.Assert.*;
 public class CeasarCipherTest {
 
     @Test
-    public void whenNumberOfPositionsIsWrongThrowException() {
+    public void testingCapitalLettersWhenNotMoving() {
+        String input = "ABCD";
+        CeasarCipher ceasarCipher = new CeasarCipher();
+
+        assertEquals("ABCD", ceasarCipher.encode(input, 0));
+    }
+
+    @Test
+    public void testingCapitalAndSmallLettersWithMovingBy8() {
+        String input = "ABCD efgHIJ,fsSD.fs  adf!!";
+        CeasarCipher ceasarCipher = new CeasarCipher();
+
+        assertEquals("IJKL mnoPQR,naAL.na  iln!!", ceasarCipher.encode(input, 8));
+    }
+
+    @Test
+    public void testToIncludeOtherCharactersAndMoveLettersBy1() {
+        String input = "A B,cde;Fg";
+        CeasarCipher ceasarCipher = new CeasarCipher();
+
+        assertEquals("B C,def;Gh", ceasarCipher.encode(input, 1));
+    }
+
+    @Test
+    public void whenNumberOfPositionsIsMoreThan26OrLessThan0ThrowException() {
         String input = "z";
         CeasarCipher ceasarCipher = new CeasarCipher();
 
         try {
-            ceasarCipher.encode(input,543);
+            ceasarCipher.encode(input,-43);
         }catch (WrongNumberOfPositionsException e){
-            e.getMessage();
+            System.out.println(e.getMessage());
         }
+    }
+
+    @Test
+    public void whenNumberOfPositionsIs0ReturnSameStringAsInput() {
+        String input = "abc";
+        CeasarCipher ceasarCipher = new CeasarCipher();
+
+        assertEquals("abc", ceasarCipher.encode(input, 0));
+    }
+
+    @Test
+    public void whenNumberOfPositionsIs26ReturnSameStringAsInput() {
+        String input = "abc";
+        CeasarCipher ceasarCipher = new CeasarCipher();
+
+        assertEquals("abc", ceasarCipher.encode(input, 26));
     }
 
     @Test
