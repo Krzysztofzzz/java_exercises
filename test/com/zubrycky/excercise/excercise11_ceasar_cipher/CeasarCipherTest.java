@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 public class CeasarCipherTest {
 
     @Test
-    public void testingCapitalLettersWhenNotMoving() {
+    public void testingCapitalLettersWhenNotMoving() throws WrongNumberOfPositionsException {
         String input = "ABCD";
         CeasarCipher ceasarCipher = new CeasarCipher();
 
@@ -15,7 +15,7 @@ public class CeasarCipherTest {
     }
 
     @Test
-    public void testingCapitalAndSmallLettersWithMovingBy8() {
+    public void testingCapitalAndSmallLettersWithMovingBy8() throws WrongNumberOfPositionsException {
         String input = "ABCD efgHIJ,fsSD.fs  adf!!";
         CeasarCipher ceasarCipher = new CeasarCipher();
 
@@ -23,27 +23,24 @@ public class CeasarCipherTest {
     }
 
     @Test
-    public void testToIncludeOtherCharactersAndMoveLettersBy1() {
+    public void testToIncludeOtherCharactersAndMoveLettersBy1() throws WrongNumberOfPositionsException {
         String input = "A B,cde;Fg";
         CeasarCipher ceasarCipher = new CeasarCipher();
 
         assertEquals("B C,def;Gh", ceasarCipher.encode(input, 1));
     }
 
-    @Test
-    public void whenNumberOfPositionsIsMoreThan26OrLessThan0ThrowException() {
+    @Test(expected = WrongNumberOfPositionsException.class)
+    public void whenNumberOfPositionsIsMoreThan26OrLessThan0ThrowException() throws WrongNumberOfPositionsException {
         String input = "z";
         CeasarCipher ceasarCipher = new CeasarCipher();
 
-        try {
-            ceasarCipher.encode(input,-43);
-        }catch (WrongNumberOfPositionsException e){
-            System.out.println(e.getMessage());
-        }
+        ceasarCipher.encode(input, -43);
+
     }
 
     @Test
-    public void whenNumberOfPositionsIs0ReturnSameStringAsInput() {
+    public void whenNumberOfPositionsIs0ReturnSameStringAsInput() throws WrongNumberOfPositionsException{
         String input = "abc";
         CeasarCipher ceasarCipher = new CeasarCipher();
 
@@ -51,7 +48,7 @@ public class CeasarCipherTest {
     }
 
     @Test
-    public void whenNumberOfPositionsIs26ReturnSameStringAsInput() {
+    public void whenNumberOfPositionsIs26ReturnSameStringAsInput() throws WrongNumberOfPositionsException{
         String input = "abc";
         CeasarCipher ceasarCipher = new CeasarCipher();
 
@@ -59,7 +56,7 @@ public class CeasarCipherTest {
     }
 
     @Test
-    public void whenInputIsNullReturnNull() {
+    public void whenInputIsNullReturnNull() throws WrongNumberOfPositionsException{
         String input = null;
         CeasarCipher ceasarCipher = new CeasarCipher();
 
@@ -67,7 +64,7 @@ public class CeasarCipherTest {
     }
 
     @Test
-    public void whenInputIsEmptyReturnEmptyString() {
+    public void whenInputIsEmptyReturnEmptyString() throws WrongNumberOfPositionsException{
         String input = "";
         CeasarCipher ceasarCipher = new CeasarCipher();
 
@@ -75,7 +72,7 @@ public class CeasarCipherTest {
     }
 
     @Test
-    public void whenInputHasOneLetterMoveItsPositionBy5() {
+    public void whenInputHasOneLetterMoveItsPositionBy5() throws WrongNumberOfPositionsException{
         String input = "a";
         CeasarCipher ceasarCipher = new CeasarCipher();
 
@@ -83,7 +80,7 @@ public class CeasarCipherTest {
     }
 
     @Test
-    public void whenInputHasMultipleLettersMoveItsPositionBy5() {
+    public void whenInputHasMultipleLettersMoveItsPositionBy5() throws WrongNumberOfPositionsException{
         String input = "abc";
         CeasarCipher ceasarCipher = new CeasarCipher();
 
@@ -91,7 +88,7 @@ public class CeasarCipherTest {
     }
 
     @Test
-    public void whenInputIsLetterZMoveItsPositionBy1ToLetterA() {
+    public void whenInputIsLetterZMoveItsPositionBy1ToLetterA() throws WrongNumberOfPositionsException{
         String input = "z";
         CeasarCipher ceasarCipher = new CeasarCipher();
 
@@ -99,7 +96,7 @@ public class CeasarCipherTest {
     }
 
     @Test
-    public void whenInputIsLetterZMoveItsPositionBy5ToLetterE() {
+    public void whenInputIsLetterZMoveItsPositionBy5ToLetterE() throws WrongNumberOfPositionsException{
         String input = "z";
         CeasarCipher ceasarCipher = new CeasarCipher();
 
@@ -107,7 +104,7 @@ public class CeasarCipherTest {
     }
 
     @Test
-    public void whenInputIs5LastLettersOfTheAlphabetMoveItTo5FirstPositionsOfTheAlphabet() {
+    public void whenInputIs5LastLettersOfTheAlphabetMoveItTo5FirstPositionsOfTheAlphabet() throws WrongNumberOfPositionsException{
         String input = "vwxyz";
         CeasarCipher ceasarCipher = new CeasarCipher();
 

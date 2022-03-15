@@ -2,7 +2,7 @@ package com.zubrycky.excercise.excercise11_ceasar_cipher;
 
 public class CeasarCipher {
 
-    public String encode(String code, int move) {
+    public String encode(String code, int move) throws WrongNumberOfPositionsException{
         if (code == null) {
             return null;
         }
