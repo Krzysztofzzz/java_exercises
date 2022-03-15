@@ -3,7 +3,7 @@ package com.zubrycky;
 public class Main {
 
     public static void main(String[] args) {
-        char character = 'z';
+        char character = 'A';
         System.out.print(character + " ");
         int intCharacter = character;
         System.out.println(intCharacter);

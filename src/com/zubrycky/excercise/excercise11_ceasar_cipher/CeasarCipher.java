@@ -2,14 +2,12 @@ package com.zubrycky.excercise.excercise11_ceasar_cipher;
 
 public class CeasarCipher {
 
-    public String encode(String code, int move) {
+    public String encode(String code, int move){
         if (code == null) {
             return null;
-        }
-        if (code.isEmpty()) {
+        }if (code.isEmpty()) {
             return "";
-        }
-        if (move < 0 || move > 26) {
+        }if (move<0||move>26){
             throw new WrongNumberOfPositionsException();
         }
 
@@ -19,30 +17,31 @@ public class CeasarCipher {
         int integerOfCapitalLetterA = 65;
         String coded = "";
         char[] characterArray = code.toCharArray();
-        int integerOfCharacter;
+        int[] integerArray = new int[characterArray.length];
 
         for (int i = 0; i < characterArray.length; i++) {
-            integerOfCharacter = characterArray[i];
+            integerArray[i] = characterArray[i];
 
-            if (integerOfCharacter >= integerOfSmallLetterA && integerOfCharacter <= integerOfSmallLetterZ) {
-                characterArray[i] = codeCharacter(integerOfCharacter, integerOfSmallLetterA, integerOfSmallLetterZ, move);
-            }
-            if (integerOfCharacter >= integerOfCapitalLetterA && integerOfCharacter <= integerOfCapitalLetterZ) {
-                characterArray[i] = codeCharacter(integerOfCharacter, integerOfCapitalLetterA, integerOfCapitalLetterZ, move);
+            if (integerArray[i]>= integerOfSmallLetterA && integerArray[i]<=integerOfSmallLetterZ){
+                integerArray[i] = integerArray[i] + move;
+                if (integerArray[i] > integerOfSmallLetterZ) {
+                    int remainingIntegers = integerArray[i] - integerOfSmallLetterZ;
+                    integerArray[i] = integerOfSmallLetterA - 1 + remainingIntegers;
+                }
+                characterArray[i] = (char) integerArray[i];
             }
 
-            coded = coded.concat(String.valueOf(characterArray[i]));
+            if (integerArray[i]>= integerOfCapitalLetterA && integerArray[i]<=integerOfCapitalLetterZ){
+                integerArray[i] = integerArray[i] + move;
+                if (integerArray[i] > integerOfCapitalLetterZ) {
+                    int remainingIntegers = integerArray[i] - integerOfCapitalLetterZ;
+                    integerArray[i] = integerOfCapitalLetterA - 1 + remainingIntegers;
+                }
+                characterArray[i] = (char) integerArray[i];
+            }
+                coded = coded.concat(String.valueOf(characterArray[i]));
         }
 
         return coded;
-    }
-
-    private char codeCharacter(int integerOfCharacter, int firstIntOfLetters, int lastIntOfLetters, int move) {
-            integerOfCharacter = integerOfCharacter + move;
-            if (integerOfCharacter > lastIntOfLetters) {
-                int remainingIntegers = integerOfCharacter - lastIntOfLetters;
-                integerOfCharacter = firstIntOfLetters - 1 + remainingIntegers;
-            }
-        return (char) integerOfCharacter;
     }
 }
