@@ -13,9 +13,19 @@ public class LargestNumberTest {
         try {
             largestNumber.findSecondLargestNumber(input);
         } catch (NullPointerException e) {
-            e.getMessage();
+            System.out.println(e.getMessage());
         }
+    }
 
+    @Test
+    public void whenTableIsEmptyThrowEmptyTableException() {
+        int[] input = {};
+        LargestNumber largestNumber = new LargestNumber();
+        try {
+            largestNumber.findSecondLargestNumber(input);
+        } catch (EmptyTableException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Test
