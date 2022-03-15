@@ -1,10 +1,16 @@
 package com.zubrycky;
 
-import com.zubrycky.lesson.lesson23_thread.Lesson23Threads;
-
 public class Main {
 
     public static void main(String[] args) {
-        new Lesson23Threads().run();
+        char character = '[';
+        System.out.print(character + " ");
+        int intCharacter = character;
+        System.out.println(intCharacter);
+
+        intCharacter = intCharacter + 5;
+        character = (char) intCharacter;
+        System.out.print(character + " ");
+        System.out.println(intCharacter);
     }
 }
