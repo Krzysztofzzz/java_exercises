@@ -16,10 +16,10 @@ public class CeasarCipherTest {
 
     @Test
     public void testingCapitalAndSmallLettersWithMovingBy8() throws WrongNumberOfPositionsException {
-        String input = "ABCD efgHIJ,fsSD.fs  adf!!";
+        String input = "ABCD efgHIJ,fsSD\n.fs  adf!!";
         CeasarCipher ceasarCipher = new CeasarCipher();
 
-        assertEquals("IJKL mnoPQR,naAL.na  iln!!", ceasarCipher.encode(input, 8));
+        assertEquals("IJKL mnoPQR,naAL\n.na  iln!!", ceasarCipher.encode(input, 8));
     }
 
     @Test

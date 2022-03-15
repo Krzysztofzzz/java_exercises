@@ -2,7 +2,7 @@ package com.zubrycky.excercise.excercise11_ceasar_cipher;
 
 public class CeasarCipher {
 
-    public String encode(String code, int move) throws WrongNumberOfPositionsException{
+    public String encode(String code, int move) throws WrongNumberOfPositionsException {
         if (code == null) {
             return null;
         }
@@ -17,7 +17,7 @@ public class CeasarCipher {
         int integerOfSmallLetterA = 97;
         int integerOfCapitalLetterZ = 90;
         int integerOfCapitalLetterA = 65;
-        String coded = "";
+        StringBuilder coded = new StringBuilder();
         char[] characterArray = code.toCharArray();
         int integerOfCharacter;
 
@@ -31,18 +31,18 @@ public class CeasarCipher {
                 characterArray[i] = codeCharacter(integerOfCharacter, integerOfCapitalLetterA, integerOfCapitalLetterZ, move);
             }
 
-            coded = coded.concat(String.valueOf(characterArray[i]));
+            coded.append(characterArray[i]);
         }
 
-        return coded;
+        return coded.toString();
     }
 
     private char codeCharacter(int integerOfCharacter, int firstIntOfLetters, int lastIntOfLetters, int move) {
-            integerOfCharacter = integerOfCharacter + move;
-            if (integerOfCharacter > lastIntOfLetters) {
-                int remainingIntegers = integerOfCharacter - lastIntOfLetters;
-                integerOfCharacter = firstIntOfLetters - 1 + remainingIntegers;
-            }
+        integerOfCharacter = integerOfCharacter + move;
+        if (integerOfCharacter > lastIntOfLetters) {
+            int remainingIntegers = integerOfCharacter - lastIntOfLetters;
+            integerOfCharacter = firstIntOfLetters - 1 + remainingIntegers;
+        }
         return (char) integerOfCharacter;
     }
 }
