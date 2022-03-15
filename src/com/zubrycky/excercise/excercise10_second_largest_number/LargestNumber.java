@@ -2,8 +2,7 @@ package com.zubrycky.excercise.excercise10_second_largest_number;
 
 public class LargestNumber {
 
-    public int findSecondLargestNumber(int[] input) throws NullPointerException, EmptyTableException {
-        int largestNumber, secondLargestNumber;
+    public int findSecondLargestNumber(int[] input) throws EmptyTableException {
 
         if (input == null) {
             throw new NullPointerException();
@@ -15,27 +14,20 @@ public class LargestNumber {
             return input[0];
 
         } else {
-            if (input[0] > input[1]) {
-                largestNumber = input[0];
-                secondLargestNumber = input[1];
-            } else {
-                largestNumber = input[1];
-                secondLargestNumber = input[0];
-            }
+            Integer largestNumber = null;
+            Integer secondLargestNumber = null;
 
-            for (int i = 1; i < input.length; i++) {
+            for (int actualNumber : input) {
 
-                if (largestNumber < input[i]) {
+                if (largestNumber == null || largestNumber < actualNumber) {
                     secondLargestNumber = largestNumber;
-                    largestNumber = input[i];
-                } else if (secondLargestNumber < input[i] && largestNumber != input[i]) {
-                    secondLargestNumber = input[i];
+                    largestNumber = actualNumber;
+                } else if (secondLargestNumber == null || (secondLargestNumber < actualNumber && largestNumber > actualNumber)) {
+                    secondLargestNumber = actualNumber;
                 }
             }
-
+            //noinspection ConstantConditions
+            return secondLargestNumber;
         }
-        return secondLargestNumber;
-
-
     }
 }
