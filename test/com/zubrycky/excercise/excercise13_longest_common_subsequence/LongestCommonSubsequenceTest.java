@@ -84,4 +84,13 @@ public class LongestCommonSubsequenceTest {
         String lcs = longestCommonSubsequence.findLongestCommonSequence(s1, s2);
         assertEquals("b,b", lcs);
     }
+
+    @Test
+    public void test9() throws EmptyStringException {
+        String s1 = "ab";
+        String s2 = "cd";
+        LongestCommonSubsequence longestCommonSubsequence = new LongestCommonSubsequence();
+        String lcs = longestCommonSubsequence.findLongestCommonSequence(s1, s2);
+        assertNull(lcs);
+    }
 }

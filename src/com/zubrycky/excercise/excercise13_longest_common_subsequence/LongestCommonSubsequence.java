@@ -15,21 +15,20 @@ public class LongestCommonSubsequence {
         for (int move = 0; move < s1.length(); move++) {
 
             String tempS2 = s2;
-            String subsequence = "";
+            StringBuilder subsequence = new StringBuilder();
 
             for (int i = move; i < s1.length(); i++) {
                 for (int j = 0; j < tempS2.length(); j++) {
                     if (s1.charAt(i) == tempS2.charAt(j)) {
 
-                        subsequence += s1.charAt(i);
+                        subsequence.append(s1.charAt(i));
                         tempS2 = deleteLeftOfStringInclusive(tempS2, j);
                         break;
                     }
                 }
             }
-            //tu dodac do listy
-            if (!subsequence.isEmpty()) {
-                subsequencesList.add(subsequence);
+            if (subsequence.length() > 0) {
+                subsequencesList.add(subsequence.toString());
             }
 
         }
@@ -39,21 +38,25 @@ public class LongestCommonSubsequence {
     }
 
     private String findLCSInList(List<String> lcsList) {
+        if (lcsList.isEmpty()) return null;
         int sizeOfBiggestLcs = lcsList.get(0).length();
-        String output = "";
+
         for (int i = 1; i < lcsList.size(); i++) {
-            if (lcsList.get(i).length() > lcsList.get(i-1).length()) {
+            if (lcsList.get(i).length() > lcsList.get(i - 1).length()) {
                 sizeOfBiggestLcs = lcsList.get(i).length();
             }
         }
+        StringBuilder output = new StringBuilder();
         for (String str : lcsList) {
             if (str.length() == sizeOfBiggestLcs) {
-                output += str + ",";
+                if (output.length() > 0) {
+                    output.append(",");
+                }
+                output.append(str);
             }
         }
-        StringBuilder stringBuilder = new StringBuilder(output);
-        output = stringBuilder.deleteCharAt(output.length()-1).toString();
-        return output;
+
+        return output.toString();
     }
 
     private String deleteLeftOfStringInclusive(String string, int indexToDelete) {
