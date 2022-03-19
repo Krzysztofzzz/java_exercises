@@ -4,24 +4,22 @@ import java.util.List;
 
 public class CommaSeparated {
 
-    public String getString(List<Integer> list){
-        String string = "";
+    public String getString(List<Integer> list) {
 
-        if (list.isEmpty()){
-            return string;
-        }
+        StringBuilder stringBuilder = new StringBuilder("");
 
-        for (Integer i : list) {
-            if (i%2==0){
-                string += "e" + i.toString();
-            }else {
-                string += "o" + i.toString();
+        for (int index = 0; index < list.size(); index++) {
+            Integer i = list.get(index);
+            if (i % 2 == 0) {
+                stringBuilder.append("e").append(i);
+            } else {
+                stringBuilder.append("o").append(i);
             }
-            if (i.equals(list.get(list.size()-1)))
+            if (index == list.size() - 1)
                 break;
-            string += ",";
+            stringBuilder.append(",");
         }
 
-        return string;
+        return stringBuilder.toString();
     }
 }
