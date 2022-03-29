@@ -1,13 +1,10 @@
 package com.zubrycky;
 
+import com.zubrycky.lesson.lesson24_optional_stream.Lesson24OptionalStream;
+
 public class Main {
 
     public static void main(String[] args) {
-
-
-
-        String str = "abc";
-
-        System.out.println(str.length());
+        new Lesson24OptionalStream().run();
     }
 }
