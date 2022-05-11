@@ -4,6 +4,10 @@ import com.zubrycky.lesson.lesson25_json.example1.*;
 import com.zubrycky.lesson.lesson25_json.example2.ErrorData;
 import com.zubrycky.lesson.lesson25_json.example2.ErrorResponse;
 import com.zubrycky.lesson.lesson25_json.example2.SourceData;
+import com.zubrycky.lesson.lesson25_json.solutions.example_1.Batter;
+import com.zubrycky.lesson.lesson25_json.solutions.example_1.BatterTypes;
+import com.zubrycky.lesson.lesson25_json.solutions.example_1.Cake;
+import com.zubrycky.lesson.lesson25_json.solutions.example_1.Topping;
 
 import java.util.List;
 
@@ -48,6 +52,28 @@ public class Lesson25Json implements Runnable {
 
         final List<ErrorData> errorDataList = List.of(errorData1, errorData2, errorData3);
         final ErrorResponse errorResponse = new ErrorResponse(errorDataList);
+    }
+
+    private void solution1() {
+        final Batter batter1 = new Batter("1001", "Regular");
+        final Batter batter2 = new Batter("1002", "Chocolate");
+        final Batter batter3 = new Batter("1003", "Blueberry");
+        final Batter batter4 = new Batter("1004", "Devil's Food");
+        final List<Batter> battersList = List.of(batter1, batter2, batter3, batter4);
+
+        final BatterTypes batterTypes = new BatterTypes(battersList);
+
+        final Topping topping1 = new Topping("5001", "None");
+        final Topping topping2 = new Topping("5002", "Glazed");
+        final Topping topping3 = new Topping("5003", "Chocolate");
+        final Topping topping4 = new Topping("5004", "Maple");
+        final Topping topping5 = new Topping("5005", "Sugar");
+        final Topping topping6 = new Topping("5006", "Chocolate with Sprinkles");
+        final Topping topping7 = new Topping("5007", "Powdered Sugar");
+
+        final List<Topping> toppingsList = List.of(topping1, topping2, topping5, topping7, topping6, topping3, topping4);
+
+        final Cake cake = new Cake("0001", "donut", "Cake", 0.55, batterTypes, toppingsList);
     }
 
 }
