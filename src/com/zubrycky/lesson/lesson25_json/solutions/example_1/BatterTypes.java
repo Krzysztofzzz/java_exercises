@@ -8,4 +8,8 @@ public class BatterTypes {
     public BatterTypes(List<Batter> batters) {
         this.batters = batters;
     }
+
+    public List<Batter> getBatters() {
+        return batters;
+    }
 }

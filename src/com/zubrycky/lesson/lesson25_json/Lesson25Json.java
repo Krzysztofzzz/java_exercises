@@ -8,8 +8,14 @@ import com.zubrycky.lesson.lesson25_json.solutions.example_1.Batter;
 import com.zubrycky.lesson.lesson25_json.solutions.example_1.BatterTypes;
 import com.zubrycky.lesson.lesson25_json.solutions.example_1.Cake;
 import com.zubrycky.lesson.lesson25_json.solutions.example_1.Topping;
+import com.zubrycky.lesson.lesson25_json.solutions.example_2.Item;
+import com.zubrycky.lesson.lesson25_json.solutions.example_2.Menu;
+import com.zubrycky.lesson.lesson25_json.solutions.example_2.Viewer;
+import com.zubrycky.lesson.lesson25_json.solutions.example_3.SuperEntity;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.function.Function;
 
 public class Lesson25Json implements Runnable {
 
@@ -63,6 +69,21 @@ public class Lesson25Json implements Runnable {
 
         final BatterTypes batterTypes = new BatterTypes(battersList);
 
+        Optional<BatterTypes> batterTypesOptional = Optional.of(batterTypes);
+        Optional<List<Batter>> batterList = batterTypesOptional.map(new Function<BatterTypes, List<Batter>>() {
+            @Override
+            public List<Batter> apply(BatterTypes batterTypes) {
+                return batterTypes.getBatters();
+            }
+        });
+
+        Optional<List<Batter>> batterList1 = batterTypesOptional.flatMap(new Function<BatterTypes, Optional<List<Batter>>>() {
+            @Override
+            public Optional<List<Batter>> apply(BatterTypes batterTypes) {
+                return Optional.of(batterTypes.getBatters());
+            }
+        });
+
         final Topping topping1 = new Topping("5001", "None");
         final Topping topping2 = new Topping("5002", "Glazed");
         final Topping topping3 = new Topping("5003", "Chocolate");
@@ -74,6 +95,49 @@ public class Lesson25Json implements Runnable {
         final List<Topping> toppingsList = List.of(topping1, topping2, topping5, topping7, topping6, topping3, topping4);
 
         final Cake cake = new Cake("0001", "donut", "Cake", 0.55, batterTypes, toppingsList);
+    }
+
+    private void solution2() {
+        final List<Item> itemList = List.of(
+                new Item("Open", null),
+                new Item("OpenNew", "Open New"),
+                null,
+                new Item("ZoomIn", "Zoom In"),
+                new Item("ZoomOut", "Zoom Out"),
+                new Item("OriginalView", "Original View"),
+                null,
+                new Item("Quality", null),
+                new Item("Pause", null),
+                new Item("Mute", null),
+                null,
+                new Item("Find", "Find..."),
+                new Item("FindAgain", "Find Again"),
+                new Item("Copy", null),
+                new Item("CopyAgain", "Copy Again"),
+                new Item("CopySVG", "Copy SVG"),
+                new Item("ViewSVG", "View SVG"),
+                new Item("ViewSource", "View Source"),
+                new Item("SaveAs", "Save As"),
+                null,
+                new Item("Help", null),
+                new Item("About", "About Adobe CVG Viewer...")
+        );
+        final Menu menu = new Menu("SVG Viewer", itemList);
+
+        final Viewer viewer = new Viewer(menu);
+    }
+
+    private void solution3() {
+        final SuperEntity superEntity1 = new SuperEntity("Molecule Man", 29, "Dan Jukes", List.of(
+                "Radiation resistance",
+                "Turning tiny",
+                "Radiation blast"
+        ));
+        final SuperEntity superEntity2 = new SuperEntity("Madame Uppercut", 39, "Jane Wilson", List.of(
+                "Million tonne punch",
+                "Damage resistance",
+                "Superhuman reflexes"
+        ));
     }
 
 }
