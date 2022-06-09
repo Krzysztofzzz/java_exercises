@@ -1,1 +1,1 @@
-lesgo
+Java exercises repository
