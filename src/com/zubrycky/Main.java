@@ -1,6 +1,6 @@
 package com.zubrycky;
 
-import com.zubrycky.lesson.lesson26_exceptions_2.Lesson26Exceptions2;
+import com.zubrycky.lesson.lesson_26_exceptions_2.Lesson26Exceptions2;
 
 public class Main {
 
